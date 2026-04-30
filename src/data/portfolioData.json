@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Clovis Dylan",
+    "role": "Frontend Developer & Product Builder",
+    "tagline": "I design interfaces that attract. And build products that retain.",
+    "ctaButtons": ["View Projects", "Contact Me"],
+    "background": {
+      "type": "gradient",
+      "colors": ["#191516", "#2c2b30"]
+    },
+    "style": {
+      "effect": "glassBlur"
+    }
+  },
+  "projects": {
+    "sectionTitle": "Featured Projects",
+    "projectCards": [
+      {
+        "title": "Project A",
+        "description": "A SaaS platform for managing online events.",
+        "techStack": ["React", "Next.js", "Node.js", "MongoDB"],
+        "visualPlaceholder": "url_to_placeholder_image"
+      },
+      {
+        "title": "Project B",
+        "description": "A tool for real-time collaboration on design projects.",
+        "techStack": ["JavaScript", "CSS", "HTML"],
+        "visualPlaceholder": "url_to_placeholder_image"
+      },
+      {
+        "title": "Project C",
+        "description": "An app for monitoring website traffic and performance.",
+        "techStack": ["React Native", "Firebase"],
+        "visualPlaceholder": "url_to_placeholder_image"
+      }
+    ],
+    "style": {
+      "effect": "glassmorphism",
+      "hoverAnimation": "scaleUp"
+    }
+  },
+  "skills": {
+    "sectionTitle": "Skills",
+    "groups": [
+      {
+        "title": "Frontend",
+        "items": ["HTML", "CSS", "JavaScript", "React", "Next.js"]
+      },
+      {
+        "title": "Tools",
+        "items": ["Git", "VS Code", "npm/yarn"]
+      },
+      {
+        "title": "Product Mindset",
+        "description": "Proven track record in designing user-friendly interfaces and building successful products."
+      }
+    ],
+    "style": {
+      "color": "#508991"
+    }
+  },
+  "about": {
+    "sectionTitle": "About Me",
+    "content": "Clovis Dylan is a frontend developer with a passion for creating intuitive user experiences. With a strong product mindset, he has successfully launched several impactful applications that have gained significant traction in the market."
+  },
+  "contact": {
+    "sectionTitle": "Get In Touch",
+    "email": "clovis.dylan@example.com",
+    "socialLinks": [
+      {
+        "type": "LinkedIn",
+        "url": "https://linkedin.com/in/clovisdylan"
+      },
+      {
+        "type": "GitHub",
+        "url": "https://github.com/ClovisDylan"
+      }
+    ],
+    "ctaButton": "Let's Talk"
+  },
+  "globalStyles": {
+    "background": "#191516",
+    "textColor": "#fcfcfc",
+    "primaryColor": "#192bc2",
+    "secondaryColor": "#508991",
+    "accentColor": "#b27092"
+  }
+}
