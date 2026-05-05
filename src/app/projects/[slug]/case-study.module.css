@@ -1,0 +1,576 @@
+.page {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding-top: 8rem;
+  padding-bottom: 5rem;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.8fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 5rem;
+}
+
+.heroCard,
+.sideCard,
+.visualCard,
+.sectionCard,
+.metricCard,
+.ctaCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.heroCard {
+  padding: 3rem;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 1.4rem;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4a6cf7 0%, #508991 100%);
+}
+
+.title {
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #4a6cf7 0%, #6ad3df 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 720px;
+  margin-bottom: 1.5rem;
+}
+
+.summary {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  max-width: 720px;
+}
+
+.heroMeta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.metaItem {
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.metaLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.4rem;
+}
+
+.metaValue {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.88);
+  font-weight: 600;
+}
+
+.sideCard {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.visualCard {
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  overflow: hidden;
+}
+
+.heroImageWrap {
+  margin-top: 1.4rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.heroImageCaption {
+  padding: 0.85rem 1rem 1rem;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.48);
+  line-height: 1.55;
+}
+
+.visualFrame {
+  position: relative;
+  border-radius: 18px;
+  min-height: 300px;
+  padding: 1.1rem;
+  background:
+    radial-gradient(circle at top left, rgba(74, 108, 247, 0.22), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(80, 137, 145, 0.22), transparent 35%),
+    linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.visualTopbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.visualDots {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.visualDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.visualTag {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.55);
+}
+
+.visualHeadline {
+  max-width: 320px;
+  font-size: 1.35rem;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 1rem;
+}
+
+.visualGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 0.9rem;
+}
+
+.visualPanel,
+.visualStat {
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+}
+
+.visualPanel {
+  min-height: 170px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.visualPanelLabel {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.38);
+}
+
+.visualPanelLines {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.visualPanelLines span {
+  display: block;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+}
+
+.visualPanelLines span:nth-child(1) {
+  width: 82%;
+}
+
+.visualPanelLines span:nth-child(2) {
+  width: 67%;
+}
+
+.visualPanelLines span:nth-child(3) {
+  width: 74%;
+}
+
+.visualStatCol {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.visualStat {
+  padding: 1rem;
+}
+
+.visualStatValue {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 0.3rem;
+}
+
+.visualStatLabel {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.48);
+}
+
+.sideLabel {
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.impactGrid {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.impactItem {
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+.impactValue {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.94);
+  margin-bottom: 0.35rem;
+}
+
+.impactLabel {
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+.section {
+  margin-bottom: 4.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 1.8rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.8rem;
+}
+
+.sectionIntro {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.7;
+}
+
+.twoColGrid,
+.cardsGrid,
+.metricsGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.twoColGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cardsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.metricsGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.sectionCard {
+  padding: 2rem;
+}
+
+.cardTitle {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.8rem;
+}
+
+.cardText {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+  font-size: 0.92rem;
+}
+
+.cardEyebrow {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.32);
+}
+
+.list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  color: rgba(255, 255, 255, 0.58);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.listItem svg {
+  flex-shrink: 0;
+  margin-top: 0.22rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.proofGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.galleryCard {
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.galleryImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.galleryCaption {
+  padding: 1rem 1.1rem 1.1rem;
+  font-size: 0.84rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.55;
+}
+
+.noteCard {
+  margin-top: 1.25rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.noteTitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.5rem;
+}
+
+.noteText {
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+.metricCard {
+  padding: 1.4rem;
+}
+
+.metricValue {
+  font-size: 1.9rem;
+  line-height: 1;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.94);
+  margin-bottom: 0.5rem;
+}
+
+.metricLabel {
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.techBadge {
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.nextStep {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.56);
+  line-height: 1.7;
+}
+
+.ctaCard {
+  padding: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.ctaTitle {
+  font-size: 1.35rem;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 0.55rem;
+}
+
+.ctaText {
+  max-width: 640px;
+  color: rgba(255, 255, 255, 0.52);
+  line-height: 1.7;
+}
+
+.ctaActions {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+
+.projectLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.projectLink:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .cardsGrid,
+  .metricsGrid,
+  .proofGrid,
+  .visualGrid,
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .page {
+    padding-top: 7rem;
+  }
+
+  .heroCard,
+  .sideCard,
+  .sectionCard,
+  .ctaCard {
+    padding: 1.7rem;
+  }
+
+  .twoColGrid,
+  .heroMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .ctaCard {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

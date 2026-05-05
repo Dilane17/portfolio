@@ -1,88 +1,301 @@
 {
-  "hero": {
-    "title": "Clovis Dylan",
-    "role": "Frontend Developer & Product Builder",
-    "tagline": "I design interfaces that attract. And build products that retain.",
-    "ctaButtons": ["View Projects", "Contact Me"],
-    "background": {
-      "type": "gradient",
-      "colors": ["#191516", "#2c2b30"]
+  "projects": [
+    {
+      "slug": "ares-drive",
+      "title": "Ares Drive",
+      "eyebrow": "Mission réalisée chez Innovtech",
+      "company": "Innovtech",
+      "repoUrl": "https://github.com/Dilane17/ares-drive",
+      "liveUrl": "https://ares-drive.vercel.app",
+      "screenshots": [
+        {
+          "src": "/case-studies/ares-drive/hero.png",
+          "alt": "Capture du hero du projet Ares Drive",
+          "caption": "Hero principal d'Ares Drive, pensé pour installer immédiatement un univers premium et orienté conversion."
+        }
+      ],
+      "tagline": "Concevoir une plateforme de location premium capable de convertir côté client et de rester exploitable côté administration.",
+      "summary": "Projet mené en stage chez Innovtech pour structurer une expérience de réservation haut de gamme, avec un back-office utile et une base technique solide.",
+      "problem": "Il fallait construire une plateforme de location de véhicules de luxe capable de présenter l'offre avec un niveau de finition premium, tout en gérant les réservations, les contenus et les opérations administratives dans un seul produit cohérent.",
+      "solution": "J'ai conçu une expérience orientée conversion avec catalogue, fiches véhicules, tunnel de réservation, back-office protégé et intégrations métier pour gérer les demandes, les images et les notifications.",
+      "techStack": ["Next.js 16", "TypeScript", "Supabase", "Cloudinary", "Resend", "Playwright"],
+      "ctaLabel": "Voir la mission",
+      "role": "Développeur frontend/full-stack en stage",
+      "timeline": "Mission de stage",
+      "team": "Innovtech, produit, design, métier",
+      "status": "Projet d'entreprise présenté sans informations confidentielles",
+      "deliverables": [
+        "Homepage orientée conversion et positionnement premium",
+        "Catalogue, fiches véhicules et tunnel de réservation",
+        "Back-office protégé pour gérer l'offre, les images et les demandes"
+      ],
+      "proofPoints": [
+        "Dépôt public montrant une architecture App Router structurée",
+        "Présence de flux admin, réservation, email et gestion média",
+        "Configuration de tests Playwright sur les parcours clés"
+      ],
+      "recruiterTakeaways": [
+        "Capacité à aller au-delà d'une landing page pour traiter un vrai besoin produit",
+        "Aisance sur l'intégration d'outils métier et d'opérations internes",
+        "Bonne lecture de l'équilibre entre conversion, expérience et maintenabilité"
+      ],
+      "impact": [
+        { "label": "Expérience client", "value": "Plus premium" },
+        { "label": "Réservation", "value": "Mieux structurée" },
+        { "label": "Gestion interne", "value": "Centralisée" }
+      ],
+      "goals": [
+        "Créer une expérience haut de gamme cohérente avec le positionnement de la marque.",
+        "Fluidifier le passage de la découverte d'un véhicule jusqu'à la demande de réservation.",
+        "Donner à l'équipe un back-office exploitable pour gérer l'offre et les demandes."
+      ],
+      "challenges": [
+        "Faire cohabiter une vitrine premium, un catalogue détaillé et une logique opérationnelle plus complexe qu'une simple landing page.",
+        "Conserver une impression de fluidité tout en intégrant des flux de réservation, de notification et d'administration.",
+        "Poser une base technique assez propre pour faire évoluer le produit sans multiplier les régressions."
+      ],
+      "process": [
+        {
+          "title": "Construire un parcours de conversion crédible",
+          "description": "J'ai organisé la homepage, le catalogue et les fiches véhicules comme un entonnoir clair: séduire, rassurer, informer puis déclencher la réservation avec un minimum de friction."
+        },
+        {
+          "title": "Relier expérience publique et logique métier",
+          "description": "La réservation n'a pas été pensée comme un simple formulaire. Je l'ai connectée à un flux complet impliquant persistance, notifications email et ouverture rapide vers WhatsApp pour ne pas freiner l'intention utilisateur."
+        },
+        {
+          "title": "Donner de l'autonomie via le back-office",
+          "description": "J'ai structuré un espace admin protégé pour gérer véhicules, images et demandes, afin que le produit reste utile au quotidien et pas seulement joli côté vitrine."
+        }
+      ],
+      "technicalDecisions": [
+        {
+          "title": "App Router et architecture modulaire",
+          "description": "Le projet est structuré par zones métier avec une séparation claire entre homepage, catalogue, réservation, admin et logique partagée, ce qui facilite la maintenance."
+        },
+        {
+          "title": "Intégrations utiles au business",
+          "description": "Supabase, Cloudinary et Resend ont été intégrés de façon cohérente pour gérer les données, les médias et les notifications sans complexifier inutilement l'expérience."
+        },
+        {
+          "title": "Sécuriser les flux sensibles",
+          "description": "Les zones critiques comme les réservations et l'administration ont été pensées avec des protections côté accès, une logique de validation et des tests end-to-end."
+        }
+      ],
+      "outcomes": [
+        "Une plateforme plus crédible commercialement qu'une simple page vitrine.",
+        "Une meilleure continuité entre branding, expérience utilisateur et besoins opérationnels.",
+        "Une base technique sérieuse sur laquelle l'équipe peut continuer à construire."
+      ],
+      "nextSteps": "La suite logique serait d'ajouter davantage d'automatisation métier autour du suivi des demandes, des disponibilités et de la relation client.",
+      "publicNote": "Cette présentation met en avant le cadre de la mission, les objectifs et les choix techniques observables publiquement, sans exposer d'éléments internes ou sensibles."
     },
-    "style": {
-      "effect": "glassBlur"
+    {
+      "slug": "asmi-transfert",
+      "title": "ASMI Transfert",
+      "eyebrow": "Mission réalisée pour HustlerLabs",
+      "company": "HustlerLabs",
+      "repoUrl": "https://github.com/Dilane17/asmi-transfert",
+      "liveUrl": "https://asmitransfert-landing.vercel.app",
+      "screenshots": [
+        {
+          "src": "/case-studies/asmi-transfert/hero.png",
+          "alt": "Capture du hero du projet ASMI Transfert",
+          "caption": "Hero d'ASMI Transfert, construit pour poser la promesse de sécurité et rendre le produit lisible dès le premier écran."
+        }
+      ],
+      "tagline": "Transformer une promesse de marque fintech en landing page claire, moderne et immédiatement rassurante.",
+      "summary": "Projet réalisé comme collaborateur chez HustlerLabs pour concevoir une landing page de transfert de fonds orientée clarté, confiance et qualité perçue.",
+      "problem": "Le produit devait se présenter comme une solution de transfert de fonds nouvelle génération pour l'Afrique et l'Europe, avec un discours clair, une hiérarchie forte et un niveau de finition capable d'inspirer confiance dès les premiers écrans.",
+      "solution": "J'ai participé à la conception et à l'implémentation d'une landing page moderne, responsive et animée, structurée autour d'un message simple, d'un design system assumé et d'une narration produit pensée pour rassurer.",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "SEO"],
+      "ctaLabel": "Voir le case study",
+      "role": "Collaborateur frontend chez HustlerLabs",
+      "timeline": "Mission client",
+      "team": "HustlerLabs, branding, design, produit",
+      "status": "Mission client présentée sous un angle portfolio-safe",
+      "deliverables": [
+        "Landing page marketing complète et responsive",
+        "Design system léger avec sections réutilisables",
+        "Animations, SEO, Open Graph et finitions de production"
+      ],
+      "proofPoints": [
+        "README public décrivant le design system, les sections et la stack",
+        "Présence de Framer Motion et d'un travail de finition assumé",
+        "Base Next.js moderne orientée qualité perçue et performance mobile"
+      ],
+      "recruiterTakeaways": [
+        "Capacité à traduire une promesse de marque en expérience claire",
+        "Bonne maîtrise des détails visuels qui renforcent la crédibilité",
+        "Savoir-faire sur les projets marketing où la hiérarchie du message compte autant que le code"
+      ],
+      "impact": [
+        { "label": "Positionnement", "value": "Clarifié" },
+        { "label": "Confiance perçue", "value": "Renforcée" },
+        { "label": "Expérience mobile", "value": "Soignée" }
+      ],
+      "goals": [
+        "Poser un message produit lisible en quelques secondes.",
+        "Donner au site une qualité visuelle capable de soutenir la crédibilité de la marque.",
+        "Construire une base réutilisable avec sections, composants et design tokens cohérents."
+      ],
+      "challenges": [
+        "Dans la fintech, chaque mot, chaque couleur et chaque transition influencent la perception de confiance.",
+        "Il fallait équilibrer identité de marque, pédagogie produit et performance sur mobile.",
+        "Le site devait rester élégant sans tomber dans l'effet décoratif qui nuit à la compréhension."
+      ],
+      "process": [
+        {
+          "title": "Structurer le message avant le visuel",
+          "description": "J'ai travaillé la hiérarchie des sections pour que la valeur du produit, ses garanties et son fonctionnement soient compris sans effort."
+        },
+        {
+          "title": "Créer une direction visuelle cohérente",
+          "description": "Couleurs, typographie, animations et CTA ont été organisés dans un langage visuel constant pour servir la marque plutôt que la disperser."
+        },
+        {
+          "title": "Optimiser la perception de fluidité",
+          "description": "Les micro-interactions, le responsive et les effets de transition ont été utilisés avec mesure pour rendre l'expérience plus vivante sans ralentir la lecture."
+        }
+      ],
+      "technicalDecisions": [
+        {
+          "title": "Fondation App Router simple et propre",
+          "description": "Le projet repose sur une structure Next.js claire, facile à maintenir et adaptée à une landing page marketing moderne."
+        },
+        {
+          "title": "Design system léger mais consistant",
+          "description": "Les composants et constantes visuelles ont été centralisés pour garder un rendu homogène sur toutes les sections."
+        },
+        {
+          "title": "Finition orientée production",
+          "description": "SEO, Open Graph, optimisation d'images et accessibilité ont été traités comme des éléments standards de livraison, pas comme des bonus."
+        }
+      ],
+      "outcomes": [
+        "Une présentation de marque plus forte et plus crédible.",
+        "Un site plus aligné avec les attentes de clarté et de sérieux du secteur fintech.",
+        "Une base réutilisable pour faire évoluer la communication du produit."
+      ],
+      "nextSteps": "L'étape suivante serait d'ajouter des preuves produit plus concrètes, des formulaires connectés et des tests de conversion sur les sections clés.",
+      "publicNote": "La case study met l'accent sur le cadrage produit, la qualité d'exécution et les éléments déjà visibles publiquement dans le dépôt."
+    },
+    {
+      "slug": "atelier-bossart",
+      "title": "Atelier Bossart",
+      "eyebrow": "Mission réalisée chez Innovtech",
+      "company": "Innovtech",
+      "repoUrl": "",
+      "liveUrl": "https://bossart.vercel.app",
+      "screenshots": [
+        {
+          "src": "/case-studies/atelier-bossart/hero.png",
+          "alt": "Capture du hero du projet Atelier Bossart",
+          "caption": "Hero d'Atelier Bossart, conçu pour transmettre immédiatement une identité éditoriale forte et une ambiance de studio premium."
+        }
+      ],
+      "tagline": "Donner à un studio audiovisuel une présence web plus éditoriale, plus premium et plus fidèle à son univers créatif.",
+      "summary": "Projet mené chez Innovtech pour mettre en ligne une vitrine élégante et structurée pour Atelier Bossart, studio de production audiovisuelle et podcasts.",
+      "problem": "Le site devait traduire un univers créatif fort tout en présentant clairement les services, les réalisations, la dimension éditoriale et les points de contact d'un studio audiovisuel basé entre Cotonou et Paris.",
+      "solution": "J'ai participé à la mise en place d'un site vitrine éditorial, pensé comme une narration de marque complète, avec sections immersives, preuve sociale, portfolio et CTA de contact bien intégrés.",
+      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Lucide React", "SEO"],
+      "ctaLabel": "Voir la réalisation",
+      "role": "Développeur frontend en stage",
+      "timeline": "Mission de stage",
+      "team": "Innovtech, direction créative, contenu",
+      "status": "Projet de studio présenté sans divulgation d'éléments propriétaires",
+      "deliverables": [
+        "Homepage éditoriale structurée par séquences de marque",
+        "Sections services, portfolio, témoignages et contact",
+        "Socle SEO et architecture simple à faire évoluer"
+      ],
+      "proofPoints": [
+        "Dépôt public avec structure par sections métiers",
+        "Métadonnées explicites et découpage de la page en composants",
+        "Positionnement clair comme site vitrine premium pour un studio créatif"
+      ],
+      "recruiterTakeaways": [
+        "Capacité à servir une identité de marque sans perdre la lisibilité business",
+        "Bonne sensibilité au rythme d'une page et à la narration visuelle",
+        "Savoir-faire sur les sites vitrines premium qui demandent une vraie direction d'interface"
+      ],
+      "impact": [
+        { "label": "Image de marque", "value": "Valorisée" },
+        { "label": "Narration", "value": "Plus cohérente" },
+        { "label": "Présence digitale", "value": "Professionnalisée" }
+      ],
+      "goals": [
+        "Faire ressentir la singularité du studio dès la première impression.",
+        "Présenter les services, références et expertises dans un cadre haut de gamme.",
+        "Transformer le site en support crédible de prospection et de prise de contact."
+      ],
+      "challenges": [
+        "Trouver le bon équilibre entre expression artistique et lisibilité business.",
+        "Organiser de nombreuses sections de contenu sans perdre en rythme ni en cohérence.",
+        "Préserver une sensation premium tout en gardant une architecture simple à maintenir."
+      ],
+      "process": [
+        {
+          "title": "Travailler le rythme de la page",
+          "description": "J'ai structuré la homepage comme une succession de séquences: ouverture forte, mise en contexte, services, portfolio, témoignages et appels à l'action."
+        },
+        {
+          "title": "Faire exister la marque à travers l'interface",
+          "description": "Le ton visuel, la hiérarchie des blocs et la mise en scène des contenus ont été pensés pour prolonger l'identité du studio plutôt que la paraphraser."
+        },
+        {
+          "title": "Conserver une logique de vitrine utile",
+          "description": "Au-delà de l'esthétique, j'ai veillé à ce que chaque section serve un objectif précis: informer, rassurer, prouver ou déclencher le contact."
+        }
+      ],
+      "technicalDecisions": [
+        {
+          "title": "Composants de sections réutilisables",
+          "description": "La page est structurée autour de sections dédiées, ce qui permet de faire évoluer le storytelling ou l'ordre des blocs sans tout reconstruire."
+        },
+        {
+          "title": "Métadonnées et SEO propres",
+          "description": "La base a été pensée pour soutenir la visibilité du studio avec un travail propre sur les métadonnées et la structuration des contenus."
+        },
+        {
+          "title": "Structure adaptée à une vitrine éditoriale",
+          "description": "L'architecture du projet reste simple mais suffisante pour supporter plusieurs blocs métier: portfolio, témoignages, logos clients, citations et contact."
+        }
+      ],
+      "outcomes": [
+        "Un site plus aligné avec l'ambition créative du studio.",
+        "Une meilleure lecture de l'offre et des preuves de crédibilité.",
+        "Une vitrine plus professionnelle pour soutenir la prise de contact et la présence de marque."
+      ],
+      "nextSteps": "La suite la plus naturelle serait d'enrichir le portfolio de réalisations avec davantage de contenus dynamiques, de filtres et de preuves sociales éditorialisées.",
+      "publicNote": "Le récit se concentre sur la mission, la structure du projet et les choix de présentation visibles publiquement, sans détailler d'informations sensibles."
     }
-  },
-  "projects": {
-    "sectionTitle": "Featured Projects",
-    "projectCards": [
-      {
-        "title": "Project A",
-        "description": "A SaaS platform for managing online events.",
-        "techStack": ["React", "Next.js", "Node.js", "MongoDB"],
-        "visualPlaceholder": "url_to_placeholder_image"
-      },
-      {
-        "title": "Project B",
-        "description": "A tool for real-time collaboration on design projects.",
-        "techStack": ["JavaScript", "CSS", "HTML"],
-        "visualPlaceholder": "url_to_placeholder_image"
-      },
-      {
-        "title": "Project C",
-        "description": "An app for monitoring website traffic and performance.",
-        "techStack": ["React Native", "Firebase"],
-        "visualPlaceholder": "url_to_placeholder_image"
-      }
-    ],
-    "style": {
-      "effect": "glassmorphism",
-      "hoverAnimation": "scaleUp"
+  ],
+  "skills": [
+    {
+      "title": "Frontend",
+      "items": ["React", "Next.js", "TypeScript", "Animations utiles", "Accessibilité", "Architecture de composants", "Gestion d'état"]
+    },
+    {
+      "title": "Outils & qualité",
+      "items": ["Storybook", "Playwright", "ESLint", "CI", "Design tokens", "Revue de code", "Budgets de performance"]
+    },
+    {
+      "title": "Vision produit",
+      "items": ["Architecture de l'information", "Funnels", "Mesure produit", "Onboarding", "Clarté du copywriting", "Cas limites", "Niveau d'exigence"]
     }
-  },
-  "skills": {
-    "sectionTitle": "Skills",
-    "groups": [
-      {
-        "title": "Frontend",
-        "items": ["HTML", "CSS", "JavaScript", "React", "Next.js"]
-      },
-      {
-        "title": "Tools",
-        "items": ["Git", "VS Code", "npm/yarn"]
-      },
-      {
-        "title": "Product Mindset",
-        "description": "Proven track record in designing user-friendly interfaces and building successful products."
-      }
-    ],
-    "style": {
-      "color": "#508991"
-    }
-  },
+  ],
   "about": {
-    "sectionTitle": "About Me",
-    "content": "Clovis Dylan is a frontend developer with a passion for creating intuitive user experiences. With a strong product mindset, he has successfully launched several impactful applications that have gained significant traction in the market."
-  },
-  "contact": {
-    "sectionTitle": "Get In Touch",
-    "email": "clovis.dylan@example.com",
-    "socialLinks": [
-      {
-        "type": "LinkedIn",
-        "url": "https://linkedin.com/in/clovisdylan"
-      },
-      {
-        "type": "GitHub",
-        "url": "https://github.com/ClovisDylan"
-      }
+    "approach": [
+      "Poser une base solide, puis itérer avec des retours réels et des signaux utiles.",
+      "Rendre les systèmes complexes compréhensibles grâce à une interface qui guide sans infantiliser.",
+      "Traiter l'accessibilité comme un standard de qualité, pas comme une case à cocher."
     ],
-    "ctaButton": "Let's Talk"
-  },
-  "globalStyles": {
-    "background": "#191516",
-    "textColor": "#fcfcfc",
-    "primaryColor": "#192bc2",
-    "secondaryColor": "#508991",
-    "accentColor": "#b27092"
+    "metrics": [
+      { "label": "Code", "value": "Typé et testé" },
+      { "label": "UI", "value": "Cohérente et scalable" },
+      { "label": "Performance", "value": "Pensée en amont" },
+      { "label": "Qualité", "value": "Visible à l'usage" }
+    ]
   }
 }
