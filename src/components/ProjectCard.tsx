@@ -1,14 +1,17 @@
-import Link from "next/link";
-import styles from "@/app/page.module.css";
+'use client'
+
+import Link from 'next/link'
+import { useRef } from 'react'
+import styles from '@/app/page.module.css'
 
 interface ProjectCardProps {
-  slug: string;
-  title: string;
-  company?: string;
-  problem: string;
-  solution: string;
-  techStack: string[];
-  ctaLabel?: string;
+  slug: string
+  title: string
+  company?: string
+  problem: string
+  solution: string
+  techStack: string[]
+  ctaLabel?: string
 }
 
 export default function ProjectCard({
@@ -20,8 +23,41 @@ export default function ProjectCard({
   techStack,
   ctaLabel = "Voir l'approche",
 }: ProjectCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const rx = ((rect.height / 2 - y) / (rect.height / 2)) * 7
+    const ry = ((x - rect.width / 2) / (rect.width / 2)) * 7
+    card.style.transition = 'transform 0.08s ease, box-shadow 0.08s ease, border-color 0.3s ease'
+    card.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(8px)`
+    card.style.boxShadow = '0 24px 60px rgba(25, 43, 194, 0.18), 0 8px 24px rgba(0, 0, 0, 0.35)'
+    card.style.setProperty('--sx', (x / rect.width) * 100 + '%')
+    card.style.setProperty('--sy', (y / rect.height) * 100 + '%')
+  }
+
+  const onMouseLeave = () => {
+    const card = cardRef.current
+    if (!card) return
+    card.style.transition = 'transform 0.65s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.65s ease, border-color 0.3s ease'
+    card.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) translateZ(0px)'
+    card.style.boxShadow = ''
+  }
+
   return (
-    <div className={styles.projectCard}>
+    <div
+      ref={cardRef}
+      className={styles.projectCard}
+      onMouseMove={onMouseMove}
+      onMouseLeave={onMouseLeave}
+    >
+      {/* Shine overlay */}
+      <div className={styles.cardShine} aria-hidden="true" />
+
       {/* Header */}
       <div className={styles.projectCardHeader}>
         <div>
@@ -80,5 +116,5 @@ export default function ProjectCard({
         <span className={styles.hoverHint}>Survolez pour explorer</span>
       </div>
     </div>
-  );
+  )
 }

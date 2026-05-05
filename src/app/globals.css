@@ -3,6 +3,8 @@
    ================================ */
 :root {
   --bg:            #0c0c10;
+  --mx:            -500px;
+  --my:            -500px;
   --bg-card:       rgba(255, 255, 255, 0.045);
   --bg-card-inner: rgba(255, 255, 255, 0.03);
   --border:        rgba(255, 255, 255, 0.09);
@@ -24,6 +26,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* ================================
+   CUSTOM CURSOR — hide native on pointer devices
+   ================================ */
+.has-custom-cursor,
+.has-custom-cursor * {
+  cursor: none !important;
+}
+
+/* Ambient spotlight — reacts to cursor via --mx / --my */
+.has-custom-cursor body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9997;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    700px circle at var(--mx) var(--my),
+    rgba(25, 43, 194, 0.11) 0%,
+    rgba(80, 137, 145, 0.04) 45%,
+    transparent 65%
+  );
 }
 
 html {

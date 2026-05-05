@@ -330,6 +330,7 @@
 }
 
 .projectCard {
+  position: relative;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -338,10 +339,29 @@
   flex-direction: column;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  will-change: transform;
 }
 .projectCard:hover {
   border-color: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 0 40px rgba(25, 43, 194, 0.08);
+}
+
+/* Shine overlay — follows cursor inside the card */
+.cardShine {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  background: radial-gradient(
+    260px circle at var(--sx, 50%) var(--sy, 50%),
+    rgba(255, 255, 255, 0.06),
+    transparent 65%
+  );
+  transition: opacity 0.25s ease;
+}
+.projectCard:hover .cardShine {
+  opacity: 1;
 }
 
 .projectCardHeader {

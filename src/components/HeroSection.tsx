@@ -62,7 +62,6 @@ export default function HeroSection() {
               <div className={styles.snapshotLabel}>Aperçu de ma façon de construire</div>
               <div className={styles.snapshotTitle}>Lisible, solide, prête à scaler</div>
             </div>
-            <div className={styles.snapshotIcon} />
           </div>
 
           <div className={styles.metricItem}>
