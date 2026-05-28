@@ -18,16 +18,28 @@
       "summary": "Projet mené en stage chez Innovtech pour structurer une expérience de réservation haut de gamme, avec un back-office utile et une base technique solide.",
       "problem": "Il fallait construire une plateforme de location de véhicules de luxe capable de présenter l'offre avec un niveau de finition premium, tout en gérant les réservations, les contenus et les opérations administratives dans un seul produit cohérent.",
       "solution": "J'ai conçu une expérience orientée conversion avec catalogue, fiches véhicules, tunnel de réservation, back-office protégé et intégrations métier pour gérer les demandes, les images et les notifications.",
-      "techStack": ["Next.js 16", "TypeScript", "Supabase", "Cloudinary", "Resend", "Playwright"],
+      "techStack": [
+        "Next.js 16",
+        "TypeScript",
+        "Supabase",
+        "Cloudinary",
+        "Resend",
+        "Playwright"
+      ],
       "ctaLabel": "Voir la mission",
       "role": "Développeur frontend/full-stack en stage",
-      "timeline": "Mission de stage",
+      "timeline": "Stage — 3 mois (2025)",
       "team": "Innovtech, produit, design, métier",
       "status": "Projet d'entreprise présenté sans informations confidentielles",
       "deliverables": [
         "Homepage orientée conversion et positionnement premium",
         "Catalogue, fiches véhicules et tunnel de réservation",
         "Back-office protégé pour gérer l'offre, les images et les demandes"
+      ],
+      "deliverableDescriptions": [
+        "Page d'accueil orientée conversion avec hero immersif, galerie véhicules, social proof et CTA WhatsApp intégrés dès le premier scroll.",
+        "Catalogue filtrable avec fiches détaillées par véhicule, galerie images haute résolution via Cloudinary et tunnel de réservation sans friction.",
+        "Interface admin protégée permettant la gestion complète des véhicules, des disponibilités, des demandes et des notifications email via Resend."
       ],
       "proofPoints": [
         "Dépôt public montrant une architecture App Router structurée",
@@ -108,16 +120,27 @@
       "summary": "Projet réalisé comme collaborateur chez HustlerLabs pour concevoir une landing page de transfert de fonds orientée clarté, confiance et qualité perçue.",
       "problem": "Le produit devait se présenter comme une solution de transfert de fonds nouvelle génération pour l'Afrique et l'Europe, avec un discours clair, une hiérarchie forte et un niveau de finition capable d'inspirer confiance dès les premiers écrans.",
       "solution": "J'ai participé à la conception et à l'implémentation d'une landing page moderne, responsive et animée, structurée autour d'un message simple, d'un design system assumé et d'une narration produit pensée pour rassurer.",
-      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "SEO"],
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "SEO"
+      ],
       "ctaLabel": "Voir le case study",
       "role": "Collaborateur frontend chez HustlerLabs",
-      "timeline": "Mission client",
+      "timeline": "Mission freelance — 2025",
       "team": "HustlerLabs, branding, design, produit",
       "status": "Mission client présentée sous un angle portfolio-safe",
       "deliverables": [
         "Landing page marketing complète et responsive",
         "Design system léger avec sections réutilisables",
         "Animations, SEO, Open Graph et finitions de production"
+      ],
+      "deliverableDescriptions": [
+        "Landing page responsive et animée avec hero narratif, présentation des fonctionnalités de transfert et section confiance adaptée au marché UEMOA.",
+        "Design system cohérent avec tokens de couleur, typographie hiérarchisée et composants réutilisables pour une maintenance facilitée.",
+        "Optimisation SEO on-page avec métadonnées structurées, Open Graph, performance Vercel et score Lighthouse > 90."
       ],
       "proofPoints": [
         "README public décrivant le design system, les sections et la stack",
@@ -198,16 +221,27 @@
       "summary": "Projet mené chez Innovtech pour mettre en ligne une vitrine élégante et structurée pour Atelier Bossart, studio de production audiovisuelle et podcasts.",
       "problem": "Le site devait traduire un univers créatif fort tout en présentant clairement les services, les réalisations, la dimension éditoriale et les points de contact d'un studio audiovisuel basé entre Cotonou et Paris.",
       "solution": "J'ai participé à la mise en place d'un site vitrine éditorial, pensé comme une narration de marque complète, avec sections immersives, preuve sociale, portfolio et CTA de contact bien intégrés.",
-      "techStack": ["Next.js", "TypeScript", "Tailwind CSS", "Lucide React", "SEO"],
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Lucide React",
+        "SEO"
+      ],
       "ctaLabel": "Voir la réalisation",
       "role": "Développeur frontend en stage",
-      "timeline": "Mission de stage",
+      "timeline": "Mission freelance — 2024",
       "team": "Innovtech, direction créative, contenu",
       "status": "Projet de studio présenté sans divulgation d'éléments propriétaires",
       "deliverables": [
         "Homepage éditoriale structurée par séquences de marque",
         "Sections services, portfolio, témoignages et contact",
         "Socle SEO et architecture simple à faire évoluer"
+      ],
+      "deliverableDescriptions": [
+        "Site vitrine éditorial avec sections immersives, présentation des services audiovisuels et galerie portfolio organisée par catégorie.",
+        "Composant PortfolioGallery avec lightbox, navigation fluide entre les œuvres et optimisation Next.js Image pour 95 visuels haute qualité.",
+        "Architecture responsive avec menu hamburger mobile, animations d'entrée au scroll et intégration des liens de contact et réseaux sociaux."
       ],
       "proofPoints": [
         "Dépôt public avec structure par sections métiers",
@@ -274,15 +308,51 @@
   "skills": [
     {
       "title": "Frontend",
-      "items": ["React", "Next.js", "TypeScript", "Animations utiles", "Accessibilité", "Architecture de composants", "Gestion d'état"]
+      "items": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Animations utiles",
+        "Accessibilité",
+        "Architecture de composants",
+        "Gestion d'état"
+      ]
     },
     {
       "title": "Outils & qualité",
-      "items": ["Storybook", "Playwright", "ESLint", "CI", "Design tokens", "Revue de code", "Budgets de performance"]
+      "items": [
+        "Storybook",
+        "Playwright",
+        "ESLint",
+        "CI",
+        "Design tokens",
+        "Revue de code",
+        "Budgets de performance"
+      ]
     },
     {
       "title": "Vision produit",
-      "items": ["Architecture de l'information", "Funnels", "Mesure produit", "Onboarding", "Clarté du copywriting", "Cas limites", "Niveau d'exigence"]
+      "items": [
+        "Architecture de l'information",
+        "Funnels",
+        "Mesure produit",
+        "Onboarding",
+        "Clarté du copywriting",
+        "Cas limites",
+        "Niveau d'exigence"
+      ]
+    },
+    {
+      "title": "Backend & Mobile",
+      "items": [
+        "NestJS",
+        "PostgreSQL",
+        "Flutter",
+        "Dart",
+        "REST API",
+        "Prisma",
+        "Docker"
+      ]
     }
   ],
   "about": {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/app/page.module.css";
 
 export default function HeroSection() {
@@ -6,32 +7,73 @@ export default function HeroSection() {
     <section className={`${styles.heroSection} container`}>
       {/* Left column */}
       <div className={`${styles.heroLeft} fade-up`}>
+        <div className={styles.heroProfile}>
+          <Image
+            src="/profile.jpg"
+            alt="Clovis Dylan - Développeur Frontend"
+            width={72}
+            height={72}
+            className={styles.heroProfilePhoto}
+          />
+        </div>
+
+        <div className={styles.availabilityBadge}>
+          <span className={styles.availabilityDot} />✶ Disponible pour missions
+          freelance
+        </div>
+
         <div className={styles.heroBadge}>
           <span className={styles.heroBadgeDot} />
-          Frontend Engineer • Produits SaaS • Design Systems
+          Frontend Engineer • React / Next.js • Freelance Bénin
         </div>
 
         <h1 className={styles.heroTitle}>
-          Je transforme des produits complexes en expériences{" "}
+          Développeur Frontend React &amp; Next.js —{" "}
           <span className={styles.heroTitleAccent}>
-            claires, rapides et mémorables.
+            je transforme vos produits SaaS en expériences rapides, claires et
+            mémorables.
           </span>
         </h1>
 
         <p className={styles.heroSubtitle}>
-          Je suis <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>Clovis Dylan</strong>, développeur frontend. J&apos;aide les équipes produit à livrer des interfaces qui inspirent confiance, réduisent la friction et donnent une vraie sensation de qualité dès les premières secondes.
+          Je suis{" "}
+          <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>
+            Clovis Dylan
+          </strong>
+          , développeur frontend freelance basé à Cotonou (Bénin). Je conçois
+          des interfaces React et Next.js performantes pour des startups et
+          équipes produit SaaS exigeantes — de la landing page au dashboard
+          complet.
         </p>
 
         <div className={styles.heroButtons}>
           <Link href="#projects" className="btn btn-primary">
             Voir les projets
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
           <Link href="#contact" className="btn btn-ghost">
             Me contacter
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
@@ -41,15 +83,21 @@ export default function HeroSection() {
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
             <span className={styles.heroStatLabel}>Stack</span>
-            <span className={styles.heroStatValue}>React · Next.js · TypeScript</span>
+            <span className={styles.heroStatValue}>
+              React · Next.js · TypeScript · Flutter
+            </span>
           </div>
           <div className={styles.heroStat}>
             <span className={styles.heroStatLabel}>Force</span>
-            <span className={styles.heroStatValue}>UI produit & architecture</span>
+            <span className={styles.heroStatValue}>
+              UI produit, full-stack &amp; architecture
+            </span>
           </div>
           <div className={styles.heroStat}>
             <span className={styles.heroStatLabel}>Livraison</span>
-            <span className={styles.heroStatValue}>Propre, testée, accessible</span>
+            <span className={styles.heroStatValue}>
+              Propre, testée, accessible
+            </span>
           </div>
         </div>
       </div>
@@ -59,29 +107,38 @@ export default function HeroSection() {
         <div className={styles.snapshotCard}>
           <div className={styles.snapshotHeader}>
             <div>
-              <div className={styles.snapshotLabel}>Aperçu de ma façon de construire</div>
-              <div className={styles.snapshotTitle}>Lisible, solide, prête à scaler</div>
+              <div className={styles.snapshotLabel}>
+                Aperçu de ma façon de construire
+              </div>
+              <div className={styles.snapshotTitle}>
+                Lisible, solide, prête à scaler
+              </div>
             </div>
           </div>
 
           <div className={styles.metricItem}>
             <div className={styles.metricTitle}>Architecture de composants</div>
             <div className={styles.metricDesc}>
-              Des APIs prévisibles, des états robustes et une base facile à faire évoluer.
+              Des APIs prévisibles, des états robustes et une base facile à
+              faire évoluer.
             </div>
           </div>
 
           <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Performance pensée dès le départ</div>
+            <div className={styles.metricTitle}>
+              Performance pensée dès le départ
+            </div>
             <div className={styles.metricDesc}>
-              Des parcours fluides, des bundles maîtrisés et une navigation sans inertie.
+              Des parcours fluides, des bundles maîtrisés et une navigation sans
+              inertie.
             </div>
           </div>
 
           <div className={styles.metricItem}>
             <div className={styles.metricTitle}>Interactions accessibles</div>
             <div className={styles.metricDesc}>
-              Des interfaces utilisables au clavier, compréhensibles et fiables pour tous.
+              Des interfaces utilisables au clavier, compréhensibles et fiables
+              pour tous.
             </div>
           </div>
 
@@ -95,7 +152,16 @@ export default function HeroSection() {
               <span className={styles.footerStatLabel}>prise au sérieux</span>
             </div>
             <div className={styles.footerStat}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="rgba(255,255,255,0.9)"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="M12 19V5M5 12l7-7 7 7" />
               </svg>
               <span className={styles.footerStatLabel}>Impact produit</span>

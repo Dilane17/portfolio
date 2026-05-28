@@ -31,20 +31,44 @@ export async function generateMetadata(
   return {
     title: `${project.title} | Case Study`,
     description: project.summary,
+    alternates: {
+      canonical: `https://www.dylan-dev.me/projects/${slug}`,
+    },
     openGraph: {
       title: `${project.title} | Case Study`,
       description: project.summary,
+      type: "website",
+      locale: "fr_FR",
+      images: [
+        {
+          url: `/case-studies/${slug}/og.png`,
+          width: 1200,
+          height: 630,
+          alt: `${project.title} — Case Study | Clovis Dylan`,
+        },
+      ],
     },
     twitter: {
+      card: "summary_large_image",
       title: `${project.title} | Case Study`,
       description: project.summary,
+      images: [`/case-studies/${slug}/og.png`],
     },
   };
 }
 
 function CheckIcon() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M5 12l5 5L20 7" />
     </svg>
   );
@@ -52,7 +76,14 @@ function CheckIcon() {
 
 function ExternalIcon() {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M7 17 17 7M7 7h10v10" />
     </svg>
   );
@@ -76,7 +107,16 @@ export default async function ProjectCaseStudyPage({
         <section className={styles.hero}>
           <ScrollReveal className={styles.heroCard}>
             <Link href="/#projects" className={styles.backLink}>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
                 <path d="m15 18-6-6 6-6" />
               </svg>
               Retour aux projets
@@ -184,9 +224,7 @@ export default async function ProjectCaseStudyPage({
               Le contexte
             </div>
             <h2 className={styles.sectionTitle}>Le problème à résoudre</h2>
-            <p className={styles.sectionIntro}>
-              {project.problem}
-            </p>
+            <p className={styles.sectionIntro}>{project.problem}</p>
           </div>
 
           <div className={styles.twoColGrid}>
@@ -222,7 +260,9 @@ export default async function ProjectCaseStudyPage({
               <span className="badge-dot" />
               Ce que j&apos;ai livré
             </div>
-            <h2 className={styles.sectionTitle}>Des livrables concrets, pas juste une intention</h2>
+            <h2 className={styles.sectionTitle}>
+              Des livrables concrets, pas juste une intention
+            </h2>
             <p className={styles.sectionIntro}>
               Cette mission peut être lue comme un ensemble de décisions et de
               livrables visibles, pas comme une promesse vague.
@@ -230,13 +270,13 @@ export default async function ProjectCaseStudyPage({
           </div>
 
           <div className={styles.cardsGrid}>
-            {project.deliverables.map((item) => (
+            {project.deliverables.map((item, idx) => (
               <div key={item} className={styles.sectionCard}>
                 <span className={styles.cardEyebrow}>Livrable</span>
                 <h3 className={styles.cardTitle}>{item}</h3>
                 <p className={styles.cardText}>
-                  Un bloc de travail tangible qui montre mon niveau d&apos;intervention
-                  sur le produit, l&apos;interface et la structure globale du projet.
+                  {project.deliverableDescriptions?.[idx] ??
+                    "Un bloc de travail tangible qui montre mon niveau d\u2019intervention sur le produit, l\u2019interface et la structure globale du projet."}
                 </p>
               </div>
             ))}
@@ -249,10 +289,10 @@ export default async function ProjectCaseStudyPage({
               <span className="badge-dot" />
               Ma réponse
             </div>
-            <h2 className={styles.sectionTitle}>Comment j&apos;ai structuré la solution</h2>
-            <p className={styles.sectionIntro}>
-              {project.solution}
-            </p>
+            <h2 className={styles.sectionTitle}>
+              Comment j&apos;ai structuré la solution
+            </h2>
+            <p className={styles.sectionIntro}>{project.solution}</p>
           </div>
 
           <div className={styles.cardsGrid}>
@@ -273,8 +313,8 @@ export default async function ProjectCaseStudyPage({
             </div>
             <h2 className={styles.sectionTitle}>Des choix pensés pour durer</h2>
             <p className={styles.sectionIntro}>
-              Au-delà du rendu visuel, l&apos;objectif était de construire une base
-              claire, maintenable et crédible pour l&apos;équipe.
+              Au-delà du rendu visuel, l&apos;objectif était de construire une
+              base claire, maintenable et crédible pour l&apos;équipe.
             </p>
           </div>
 
@@ -295,10 +335,13 @@ export default async function ProjectCaseStudyPage({
                 <span className="badge-dot" />
                 Visuels
               </div>
-              <h2 className={styles.sectionTitle}>Structure prête pour les captures</h2>
+              <h2 className={styles.sectionTitle}>
+                Structure prête pour les captures
+              </h2>
               <p className={styles.sectionIntro}>
-                J&apos;ai préparé une galerie branchée sur des assets remplaçables. Tu
-                pourras ensuite injecter tes vraies captures en gardant exactement la même structure.
+                J&apos;ai préparé une galerie branchée sur des assets
+                remplaçables. Tu pourras ensuite injecter tes vraies captures en
+                gardant exactement la même structure.
               </p>
             </div>
 
@@ -306,7 +349,11 @@ export default async function ProjectCaseStudyPage({
               {project.screenshots.slice(1).map((item) => (
                 <div key={item.src} className={styles.galleryCard}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.src} alt={item.alt} className={styles.galleryImage} />
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className={styles.galleryImage}
+                  />
                   <div className={styles.galleryCaption}>{item.caption}</div>
                 </div>
               ))}
@@ -320,10 +367,12 @@ export default async function ProjectCaseStudyPage({
               <span className="badge-dot" />
               Preuves publiques
             </div>
-            <h2 className={styles.sectionTitle}>Ce qu&apos;un recruteur peut vérifier</h2>
+            <h2 className={styles.sectionTitle}>
+              Ce qu&apos;un recruteur peut vérifier
+            </h2>
             <p className={styles.sectionIntro}>
-              J&apos;ai volontairement cadré ces projets avec des éléments observables
-              publiquement pour rester professionnel et crédible.
+              J&apos;ai volontairement cadré ces projets avec des éléments
+              observables publiquement pour rester professionnel et crédible.
             </p>
           </div>
 
@@ -365,10 +414,13 @@ export default async function ProjectCaseStudyPage({
               <span className="badge-dot" />
               Résultats
             </div>
-            <h2 className={styles.sectionTitle}>Ce que cette approche apporte</h2>
+            <h2 className={styles.sectionTitle}>
+              Ce que cette approche apporte
+            </h2>
             <p className={styles.sectionIntro}>
-              Une bonne case study ne montre pas seulement ce qui a été fait, mais
-              ce que cela change pour les utilisateurs et pour l&apos;équipe.
+              Une bonne case study ne montre pas seulement ce qui a été fait,
+              mais ce que cela change pour les utilisateurs et pour
+              l&apos;équipe.
             </p>
           </div>
 
@@ -392,7 +444,9 @@ export default async function ProjectCaseStudyPage({
               ))}
             </div>
             <p className={styles.nextStep}>
-              <strong style={{ color: "rgba(255,255,255,0.82)" }}>Étape suivante :</strong>{" "}
+              <strong style={{ color: "rgba(255,255,255,0.82)" }}>
+                Étape suivante :
+              </strong>{" "}
               {project.nextSteps}
             </p>
           </div>
@@ -402,9 +456,9 @@ export default async function ProjectCaseStudyPage({
           <div>
             <h2 className={styles.ctaTitle}>Ce type de projet vous parle ?</h2>
             <p className={styles.ctaText}>
-              Je peux vous aider à clarifier une expérience complexe, renforcer la
-              perception de qualité d&apos;un produit et construire une base frontend
-              plus fiable pour la suite.
+              Je peux vous aider à clarifier une expérience complexe, renforcer
+              la perception de qualité d&apos;un produit et construire une base
+              frontend plus fiable pour la suite.
             </p>
           </div>
 

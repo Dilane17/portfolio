@@ -5,6 +5,8 @@ import ProjectCard from "@/components/ProjectCard";
 import SkillsSection from "@/components/SkillsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
+import ServicesSection from "@/components/ServicesSection";
+import FAQSection from "@/components/FAQSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import styles from "./page.module.css";
 
@@ -38,15 +40,21 @@ export default function Home() {
       <section id="projects" className="section container">
         <ScrollReveal>
           <div className="section-heading">
-            <div className="badge"><span className="badge-dot" />Travaux sélectionnés</div>
-            <h2>Des projets pensés pour être utiles, crédibles et performants</h2>
+            <div className="badge">
+              <span className="badge-dot" />
+              Travaux sélectionnés
+            </div>
+            <h2>
+              Des projets pensés pour être utiles, crédibles et performants
+            </h2>
             <p>
-              Chaque projet part d&apos;un vrai problème produit: clarifier une interface,
-              accélérer un parcours, réduire la friction ou rendre un système plus facile à faire évoluer.
+              Chaque projet part d&apos;un vrai problème produit: clarifier une
+              interface, accélérer un parcours, réduire la friction ou rendre un
+              système plus facile à faire évoluer.
             </p>
           </div>
         </ScrollReveal>
-        
+
         <div className={styles.projectsGrid}>
           {data.projects.map((p, i) => (
             <ScrollReveal key={i} delay={i * 150}>
@@ -64,15 +72,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services */}
+      <ScrollReveal>
+        <ServicesSection />
+      </ScrollReveal>
+
       {/* Skills */}
       <section id="skills" className="section container">
         <ScrollReveal>
           <div className="section-heading">
-            <div className="badge"><span className="badge-dot" />Compétences</div>
-            <h2>Des compétences au service d&apos;un produit qui tient la route</h2>
+            <div className="badge">
+              <span className="badge-dot" />
+              Compétences
+            </div>
+            <h2>
+              Des compétences au service d&apos;un produit qui tient la route
+            </h2>
             <p>
-              J&apos;interviens autant sur la qualité visible de l&apos;interface que sur les
-              fondations techniques qui permettent à une équipe d&apos;aller vite sans perdre en niveau.
+              J&apos;interviens autant sur la qualité visible de
+              l&apos;interface que sur les fondations techniques qui permettent
+              à une équipe d&apos;aller vite sans perdre en niveau.
             </p>
           </div>
         </ScrollReveal>
@@ -89,6 +108,11 @@ export default function Home() {
         />
       </ScrollReveal>
 
+      {/* FAQ */}
+      <ScrollReveal>
+        <FAQSection />
+      </ScrollReveal>
+
       {/* Contact */}
       <ScrollReveal>
         <ContactSection />
@@ -98,18 +122,35 @@ export default function Home() {
       <footer className={`${styles.footer} container`}>
         <div className={styles.footerInner}>
           <div className={styles.footerLeft}>
-            <span>© 2026 Clovis Dylan. Construit avec Next.js, React et TypeScript.</span>
+            <span>
+              © 2026 Clovis Dylan. Construit avec Next.js, React et TypeScript.
+            </span>
           </div>
-          
+
           {/* Social Links in Footer */}
           <div className={styles.footerSocials}>
-            <a href="https://github.com/clovisdylan" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a
+              href="https://github.com/clovisdylan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <GitHubIcon />
             </a>
-            <a href="https://linkedin.com/in/clovisdylan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a
+              href="https://linkedin.com/in/clovisdylan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <LinkedInIcon />
             </a>
-            <a href="https://x.com/clovisdylan" target="_blank" rel="noopener noreferrer" aria-label="X / Twitter">
+            <a
+              href="https://x.com/clovisdylan"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X / Twitter"
+            >
               <XIcon />
             </a>
           </div>
