@@ -1,22 +1,18 @@
-/* ================================
-   FAQ SECTION
-   ================================ */
-
 .faqCard {
-  max-width: 780px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 20px;
+  max-width: 880px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xl);
+  background: #fff;
+  box-shadow: var(--shadow-xs);
   overflow: hidden;
 }
 
 .faqItem {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--line);
 }
 
 .faqItem:last-child {
-  border-bottom: none;
+  border-bottom: 0;
 }
 
 .faqQuestion {
@@ -24,50 +20,52 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1.5rem;
-  padding: 1.4rem 2rem;
-  background: none;
-  border: none;
+  gap: 24px;
+  padding: 22px 26px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
   cursor: pointer;
+  font-family: var(--f-display);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.25;
   text-align: left;
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: rgba(255, 255, 255, 0.88);
-  font-family: inherit;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s var(--ease);
 }
 
 .faqQuestion:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: #ffffff;
+  background: var(--bg-soft);
 }
 
 .faqIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.5);
-  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1),
-    background 0.2s ease, color 0.2s ease;
+  color: var(--ink-mid);
+  transition:
+    transform 0.35s var(--ease),
+    background 0.2s var(--ease),
+    color 0.2s var(--ease),
+    border-color 0.2s var(--ease);
 }
 
 .faqIconOpen {
   transform: rotate(45deg);
-  background: rgba(25, 43, 194, 0.18);
-  border-color: rgba(25, 43, 194, 0.35);
-  color: #6b8fff;
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--onyx);
 }
 
 .faqAnswer {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: grid-template-rows 0.35s var(--ease);
 }
 
 .faqAnswer > p {
@@ -79,22 +77,20 @@
 }
 
 .faqAnswer p {
-  padding: 0 2rem 1.4rem;
-  font-size: 0.875rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.55);
+  max-width: 720px;
+  padding: 0 26px 22px;
+  color: var(--ink-mid);
+  font-size: 14px;
+  line-height: 1.75;
 }
 
-/* ================================
-   RESPONSIVE
-   ================================ */
 @media (max-width: 640px) {
   .faqQuestion {
-    padding: 1.2rem 1.25rem;
-    font-size: 0.875rem;
+    padding: 18px 20px;
+    font-size: 16px;
   }
 
   .faqAnswer p {
-    padding: 0 1.25rem 1.2rem;
+    padding: 0 20px 18px;
   }
 }

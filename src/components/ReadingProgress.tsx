@@ -23,7 +23,7 @@ export default function ReadingProgress() {
         left: 0,
         width: `${progress}%`,
         height: "2px",
-        background: "linear-gradient(90deg, #192bc2, #508991)",
+        background: "#02f5a1",
         zIndex: 9999,
         transition: "width 0.1s linear",
         pointerEvents: "none",

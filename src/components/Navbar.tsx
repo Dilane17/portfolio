@@ -19,12 +19,13 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
     <nav className={styles.navbarWrapper}>
       <div className={styles.navbar}>
         {/* Brand */}
-        <div className={styles.navBrand}>
-          <Link href={homeHref} className={styles.navBrand}>
-            <span className={styles.brandBadge}>CD</span>
+        <Link href={homeHref} className={styles.navBrand}>
+          <span className={styles.brandBadge}>CD</span>
+          <span>
             <span className={styles.brandName}>Clovis Dylan</span>
-          </Link>
-        </div>
+            <span className={styles.brandRole}>Développeur Front-End</span>
+          </span>
+        </Link>
 
         {/* Nav links */}
         <ul className={styles.navLinks}>
@@ -38,7 +39,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
             <Link href={skillsHref}>Compétences</Link>
           </li>
           <li>
-            <Link href={aboutHref}>Approche</Link>
+            <Link href={aboutHref}>À propos</Link>
           </li>
           <li>
             <Link href={faqHref}>FAQ</Link>
@@ -58,14 +59,13 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
             Télécharger le CV
           </a>
           <Link href={contactHref} className={styles.navLinkBtn}>
-            Discutons
+            Discuter
           </Link>
           <Link
             href={projectsHref}
             className="btn btn-primary"
-            style={{ fontSize: "0.82rem", padding: "0.5rem 1.1rem" }}
           >
-            Voir mes projets
+            Voir les projets
           </Link>
         </div>
       </div>

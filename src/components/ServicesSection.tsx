@@ -62,38 +62,39 @@ const services: ServiceCard[] = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="section container">
-      <div className="section-heading">
-        <div className="badge">
-          <span className="badge-dot" />
-          Services
-        </div>
-        <h2>Ce que je peux construire pour vous</h2>
-        <p>
-          Du site vitrine au produit SaaS complet, j&apos;interviens sur l&apos;ensemble du
-          cycle — design, développement frontend, backend et mobile. Chaque projet est
-          traité sur devis après un échange pour cadrer précisément votre besoin.
-        </p>
-      </div>
-
-      <div className={styles.servicesGrid}>
-        {services.map((service, i) => (
-          <div key={i} className={styles.serviceCard}>
-            <div className={styles.cardTopRow}>
-              <div className={styles.iconWrap}>{service.icon}</div>
-              <span className={styles.devisBadge}>Sur devis</span>
-            </div>
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.cardDescription}>{service.description}</p>
-            <div className={styles.tagList}>
-              {service.tags.map((tag, j) => (
-                <span key={j} className={styles.tag}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+    <section id="services" className="section section-soft">
+      <div className="container">
+        <div className="section-heading">
+          <div className="badge">
+            <span className="badge-dot" />
+            Services
           </div>
-        ))}
+          <h2>Ce que je fais — et comment je l&apos;aborde.</h2>
+          <p>
+            Une intervention front-end calibrée pour des équipes produit qui
+            veulent avancer vite, sans rien lâcher sur le niveau
+            d&apos;exécution.
+          </p>
+        </div>
+
+        <div className={styles.servicesGrid}>
+          {services.map((service, i) => (
+            <div key={i} className={styles.serviceCard}>
+              <div className={styles.cardTopRow}>
+                <div className={styles.iconWrap}>{service.icon}</div>
+              </div>
+              <h3 className={styles.cardTitle}>{service.title}</h3>
+              <p className={styles.cardDescription}>{service.description}</p>
+              <div className={styles.tagList}>
+                {service.tags.slice(0, 3).map((tag) => (
+                  <span key={tag} className={styles.tag}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

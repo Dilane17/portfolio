@@ -6,6 +6,8 @@ import SkillsSection from "@/components/SkillsSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import ServicesSection from "@/components/ServicesSection";
+import TrustSection from "@/components/TrustSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import styles from "./page.module.css";
@@ -36,19 +38,24 @@ export default function Home() {
       <Navbar />
       <HeroSection />
 
+      <ScrollReveal>
+        <TrustSection />
+      </ScrollReveal>
+
       {/* Projects */}
       <section id="projects" className="section container">
         <ScrollReveal>
           <div className="section-heading">
             <div className="badge">
               <span className="badge-dot" />
-              Travaux sélectionnés
+              Sélection
             </div>
             <h2>
-              Des projets pensés pour être utiles, crédibles et performants
+              Des produits sur lesquels j&apos;ai{" "}
+              <span className="accent-word">livré</span>.
             </h2>
             <p>
-              Chaque projet part d&apos;un vrai problème produit: clarifier une
+              Chaque projet part d&apos;un vrai problème produit : clarifier une
               interface, accélérer un parcours, réduire la friction ou rendre un
               système plus facile à faire évoluer.
             </p>
@@ -59,6 +66,7 @@ export default function Home() {
           {data.projects.map((p, i) => (
             <ScrollReveal key={i} delay={i * 150}>
               <ProjectCard
+                index={i}
                 slug={p.slug}
                 title={p.title}
                 company={p.company}
@@ -78,26 +86,26 @@ export default function Home() {
       </ScrollReveal>
 
       {/* Skills */}
-      <section id="skills" className="section container">
-        <ScrollReveal>
-          <div className="section-heading">
-            <div className="badge">
-              <span className="badge-dot" />
-              Compétences
+      <section id="skills" className="section section-soft">
+        <div className="container">
+          <ScrollReveal>
+            <div className="section-heading">
+              <div className="badge">
+                <span className="badge-dot" />
+                Stack
+              </div>
+              <h2>Une boîte à outils choisie, pas accumulée.</h2>
+              <p>
+                Les outils sur lesquels j&apos;interviens au quotidien,
+                sélectionnés parce qu&apos;ils donnent un vrai effet de levier
+                sur la qualité d&apos;exécution.
+              </p>
             </div>
-            <h2>
-              Des compétences au service d&apos;un produit qui tient la route
-            </h2>
-            <p>
-              J&apos;interviens autant sur la qualité visible de
-              l&apos;interface que sur les fondations techniques qui permettent
-              à une équipe d&apos;aller vite sans perdre en niveau.
-            </p>
-          </div>
-        </ScrollReveal>
-        <ScrollReveal delay={200}>
-          <SkillsSection groups={data.skills} />
-        </ScrollReveal>
+          </ScrollReveal>
+          <ScrollReveal delay={200}>
+            <SkillsSection groups={data.skills} />
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* About */}
@@ -108,9 +116,12 @@ export default function Home() {
         />
       </ScrollReveal>
 
-      {/* FAQ */}
       <ScrollReveal>
         <FAQSection />
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <TestimonialsSection />
       </ScrollReveal>
 
       {/* Contact */}
@@ -156,7 +167,7 @@ export default function Home() {
           </div>
 
           <div className={styles.footerRight}>
-            Interface soignée • Mouvement maîtrisé • Accessibilité assumée
+            Conçu et codé à Cotonou · Bricolage Grotesque · Poppins
           </div>
         </div>
       </footer>

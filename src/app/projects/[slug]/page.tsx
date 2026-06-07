@@ -10,6 +10,97 @@ type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+const repoInsights: Record<
+  string,
+  {
+    heroLead: string;
+    context: string[];
+    before: string[];
+    after: string[];
+    aside: string[];
+    sourceNote: string;
+  }
+> = {
+  "ares-drive": {
+    heroLead:
+      "Ares Drive est une plateforme de location de véhicules premium construite comme un produit complet : vitrine, catalogue, fiches véhicules, tunnel de réservation, API, notifications et back-office administrateur.",
+    context: [
+      "Le dépôt montre une architecture Next.js 16 structurée autour de zones métier distinctes : homepage, catalogue, fiches véhicules, réservation, administration protégée et API de réservation.",
+      "Le besoin allait au-delà d'une simple page marketing. Le produit devait séduire côté client, gérer des médias haut de gamme via Cloudinary, enregistrer les demandes dans Supabase et prévenir l'équipe par email avec Resend.",
+      "Le flux de réservation a été pensé pour ne pas bloquer l'utilisateur : WhatsApp s'ouvre immédiatement, tandis que l'API persiste la demande et déclenche l'email administrateur côté serveur.",
+    ],
+    before: [
+      "Une simple vitrine n'aurait pas suffi à gérer les véhicules, les disponibilités et les demandes.",
+      "Le parcours client pouvait perdre en fluidité si la réservation attendait trop de traitements serveur.",
+      "Sans back-office, chaque mise à jour de véhicule ou d'image aurait dépendu du code.",
+    ],
+    after: [
+      "Un catalogue filtrable et des fiches véhicules détaillées structurent la découverte.",
+      "Un tunnel de réservation relie l'intention client à Supabase, WhatsApp et Resend.",
+      "Un admin protégé permet de gérer véhicules, images, disponibilités et demandes.",
+    ],
+    aside: [
+      "Architecture App Router avec séparation homepage, catalogue, réservation et admin.",
+      "Back-office protégé par Supabase Auth et middleware.",
+      "Flux métier complet : Supabase, Cloudinary, Resend, WhatsApp et Playwright.",
+    ],
+    sourceNote:
+      "Sources utilisées : README et package.json du repo Dilane17/ares-drive.",
+  },
+  "asmi-transfert": {
+    heroLead:
+      "ASMI Transfert est une landing fintech conçue pour présenter une solution de transfert de fonds entre l'Afrique et l'Europe avec un message clair, une identité forte et une expérience rassurante.",
+    context: [
+      "Le README décrit une landing page Next.js avec sections complètes : navbar, hero, statistiques, services, process, sécurité, témoignages, FAQ, CTA download et footer.",
+      "Le travail reposait sur une direction de marque marquée : rouge principal, bleu secondaire, section sécurité sombre, typographie Karst et composants réutilisables.",
+      "L'enjeu principal était la confiance. Dans une expérience fintech, la hiérarchie du message, la sécurité perçue, les animations et les finitions SEO comptent autant que le rendu visuel.",
+    ],
+    before: [
+      "Une promesse fintech peut paraître fragile si le discours, la sécurité et les CTA ne sont pas immédiatement lisibles.",
+      "Un design trop décoratif aurait nui à la compréhension d'un service financier.",
+      "Sans système visuel cohérent, chaque section aurait donné une impression différente.",
+    ],
+    after: [
+      "Un parcours marketing complet rend la proposition plus claire et rassurante.",
+      "Les sections sécurité, process, FAQ et témoignages renforcent la crédibilité.",
+      "Framer Motion, SEO, Open Graph et optimisation d'images donnent une finition production.",
+    ],
+    aside: [
+      "Landing page production ready avec sections marketing complètes.",
+      "Direction visuelle documentée : rouge, bleu, noir, blanc et typographie Karst.",
+      "Animations Framer Motion, SEO, accessibilité et micro-interactions.",
+    ],
+    sourceNote:
+      "Sources utilisées : README et package.json du repo Dilane17/asmi-transfert.",
+  },
+  "atelier-bossart": {
+    heroLead:
+      "Atelier Bossart est une vitrine éditoriale pour un studio audiovisuel, pensée pour valoriser une identité créative, présenter les services et guider vers la prise de contact.",
+    context: [
+      "Le repo privé confirme une base Next.js 14 avec TypeScript, Tailwind CSS et Lucide React. La case study s'appuie aussi sur les captures et les données déjà présentes dans le portfolio.",
+      "Le projet demandait un équilibre entre narration de marque, présentation claire des services, galerie de réalisations et expérience responsive.",
+      "L'objectif était de créer une présence digitale plus premium pour un studio créatif sans perdre la lisibilité business.",
+    ],
+    before: [
+      "Un studio audiovisuel peut vite paraître générique si son site ne porte pas son univers visuel.",
+      "Une galerie mal structurée rend les réalisations difficiles à explorer.",
+      "Sans architecture simple, la vitrine devient difficile à faire évoluer.",
+    ],
+    after: [
+      "Une homepage éditoriale installe rapidement l'ambiance du studio.",
+      "Les services, réalisations, témoignages et contacts sont organisés en séquences lisibles.",
+      "Une base Next.js, TypeScript et Tailwind rend le site plus simple à maintenir.",
+    ],
+    aside: [
+      "Site vitrine éditorial construit avec Next.js, TypeScript et Tailwind.",
+      "Usage de Lucide React pour une iconographie légère et cohérente.",
+      "Positionnement premium adapté à un studio audiovisuel.",
+    ],
+    sourceNote:
+      "Sources utilisées : package.json du repo privé Dilane17/Bossart- et données portfolio.",
+  },
+};
+
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
@@ -83,6 +174,8 @@ function ExternalIcon() {
       fill="none"
       stroke="currentColor"
       strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path d="M7 17 17 7M7 7h10v10" />
     </svg>
@@ -99,13 +192,26 @@ export default async function ProjectCaseStudyPage({
     notFound();
   }
 
+  const heroShot = project.screenshots?.[0];
+  const content = repoInsights[slug];
+  const quickRead = [
+    { label: "Problème", text: project.problem },
+    { label: "Solution", text: project.solution },
+    {
+      label: "Impact",
+      text: project.impact
+        .map((item) => `${item.label} : ${item.value}`)
+        .join(" · "),
+    },
+  ];
+
   return (
     <main className={styles.page}>
       <Navbar isProjectPage />
 
       <div className="container">
         <section className={styles.hero}>
-          <ScrollReveal className={styles.heroCard}>
+          <ScrollReveal className={styles.heroContent}>
             <Link href="/#projects" className={styles.backLink}>
               <svg
                 width="16"
@@ -122,91 +228,66 @@ export default async function ProjectCaseStudyPage({
               Retour aux projets
             </Link>
 
-            <div className={styles.eyebrow}>
-              <span className={styles.eyebrowDot} />
+            <div className="badge">
+              <span className="badge-dot" />
               {project.eyebrow}
             </div>
 
             <h1 className={styles.title}>
-              {project.title}{" "}
-              <span className={styles.titleAccent}>en profondeur.</span>
+              {project.title}, une case study{" "}
+              <span className="accent-word">produit</span>.
             </h1>
 
-            <p className={styles.tagline}>{project.tagline}</p>
-            <p className={styles.summary}>{project.summary}</p>
+            <p className={styles.lead}>{content.heroLead}</p>
 
-            <div className={styles.projectLinks}>
-              {project.repoUrl ? (
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.projectLink}
-                >
-                  Voir le dépôt GitHub
-                  <ExternalIcon />
-                </a>
-              ) : null}
+            <div className={styles.heroActions}>
               {project.liveUrl ? (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.projectLink}
+                  className="btn btn-primary"
                 >
-                  Voir la version en ligne
+                  Voir le site
+                  <ExternalIcon />
+                </a>
+              ) : null}
+              {project.repoUrl ? (
+                <a
+                  href={project.repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-ghost"
+                >
+                  Voir le dépôt
                   <ExternalIcon />
                 </a>
               ) : null}
             </div>
-
-            {project.screenshots?.[0] ? (
-              <div className={styles.heroImageWrap}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={project.screenshots[0].src}
-                  alt={project.screenshots[0].alt}
-                  className={styles.heroImage}
-                />
-                <div className={styles.heroImageCaption}>
-                  {project.screenshots[0].caption}
-                </div>
-              </div>
-            ) : null}
-
-            <div className={styles.heroMeta}>
-              <div className={styles.metaItem}>
-                <div className={styles.metaLabel}>Rôle</div>
-                <div className={styles.metaValue}>{project.role}</div>
-              </div>
-              <div className={styles.metaItem}>
-                <div className={styles.metaLabel}>Durée</div>
-                <div className={styles.metaValue}>{project.timeline}</div>
-              </div>
-              <div className={styles.metaItem}>
-                <div className={styles.metaLabel}>Équipe</div>
-                <div className={styles.metaValue}>{project.team}</div>
-              </div>
-            </div>
           </ScrollReveal>
 
-          <ScrollReveal className={styles.sideCard} delay={120}>
-            <div className={styles.sideLabel}>Impact attendu</div>
-            <div className={styles.impactGrid}>
-              {project.impact.map((item) => (
-                <div key={item.label} className={styles.impactItem}>
-                  <div className={styles.impactValue}>{item.value}</div>
-                  <div className={styles.impactLabel}>{item.label}</div>
-                </div>
-              ))}
-            </div>
+          <ScrollReveal className={styles.projectPanel} delay={120}>
+            <div className={styles.panelLabel}>Résumé projet</div>
+            <dl className={styles.metaList}>
+              <div>
+                <dt>Rôle</dt>
+                <dd>{project.role}</dd>
+              </div>
+              <div>
+                <dt>Timeline</dt>
+                <dd>{project.timeline}</dd>
+              </div>
+              <div>
+                <dt>Équipe</dt>
+                <dd>{project.team}</dd>
+              </div>
+              <div>
+                <dt>Statut</dt>
+                <dd>{project.status}</dd>
+              </div>
+            </dl>
 
-            <div className={styles.sideLabel}>Statut</div>
-            <div className={styles.sectionCard}>
-              <div className={styles.cardText}>{project.status}</div>
-            </div>
-
-            <div className={styles.sideLabel}>Stack mobilisée</div>
+            <div className={styles.panelLabel}>Stack</div>
             <div className={styles.techStack}>
               {project.techStack.map((tech) => (
                 <span key={tech} className={styles.techBadge}>
@@ -217,253 +298,207 @@ export default async function ProjectCaseStudyPage({
           </ScrollReveal>
         </section>
 
-        <ScrollReveal className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Le contexte
-            </div>
-            <h2 className={styles.sectionTitle}>Le problème à résoudre</h2>
-            <p className={styles.sectionIntro}>{project.problem}</p>
-          </div>
-
-          <div className={styles.twoColGrid}>
-            <div className={styles.sectionCard}>
-              <h3 className={styles.cardTitle}>Objectifs produit</h3>
-              <div className={styles.list}>
-                {project.goals.map((goal) => (
-                  <div key={goal} className={styles.listItem}>
-                    <CheckIcon />
-                    <span>{goal}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.sectionCard}>
-              <h3 className={styles.cardTitle}>Contraintes & défis</h3>
-              <div className={styles.list}>
-                {project.challenges.map((challenge) => (
-                  <div key={challenge} className={styles.listItem}>
-                    <CheckIcon />
-                    <span>{challenge}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal className={styles.section} delay={80}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Ce que j&apos;ai livré
-            </div>
-            <h2 className={styles.sectionTitle}>
-              Des livrables concrets, pas juste une intention
-            </h2>
-            <p className={styles.sectionIntro}>
-              Cette mission peut être lue comme un ensemble de décisions et de
-              livrables visibles, pas comme une promesse vague.
-            </p>
-          </div>
-
-          <div className={styles.cardsGrid}>
-            {project.deliverables.map((item, idx) => (
-              <div key={item} className={styles.sectionCard}>
-                <span className={styles.cardEyebrow}>Livrable</span>
-                <h3 className={styles.cardTitle}>{item}</h3>
-                <p className={styles.cardText}>
-                  {project.deliverableDescriptions?.[idx] ??
-                    "Un bloc de travail tangible qui montre mon niveau d\u2019intervention sur le produit, l\u2019interface et la structure globale du projet."}
-                </p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal className={styles.section} delay={120}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Ma réponse
-            </div>
-            <h2 className={styles.sectionTitle}>
-              Comment j&apos;ai structuré la solution
-            </h2>
-            <p className={styles.sectionIntro}>{project.solution}</p>
-          </div>
-
-          <div className={styles.cardsGrid}>
-            {project.process.map((step) => (
-              <div key={step.title} className={styles.sectionCard}>
-                <h3 className={styles.cardTitle}>{step.title}</h3>
-                <p className={styles.cardText}>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        <ScrollReveal className={styles.section} delay={180}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Décisions techniques
-            </div>
-            <h2 className={styles.sectionTitle}>Des choix pensés pour durer</h2>
-            <p className={styles.sectionIntro}>
-              Au-delà du rendu visuel, l&apos;objectif était de construire une
-              base claire, maintenable et crédible pour l&apos;équipe.
-            </p>
-          </div>
-
-          <div className={styles.cardsGrid}>
-            {project.technicalDecisions.map((decision) => (
-              <div key={decision.title} className={styles.sectionCard}>
-                <h3 className={styles.cardTitle}>{decision.title}</h3>
-                <p className={styles.cardText}>{decision.description}</p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-
-        {project.screenshots.length > 1 ? (
-          <ScrollReveal className={styles.section} delay={220}>
-            <div className={styles.sectionHeader}>
-              <div className="badge">
-                <span className="badge-dot" />
-                Visuels
-              </div>
-              <h2 className={styles.sectionTitle}>
-                Structure prête pour les captures
-              </h2>
-              <p className={styles.sectionIntro}>
-                J&apos;ai préparé une galerie branchée sur des assets
-                remplaçables. Tu pourras ensuite injecter tes vraies captures en
-                gardant exactement la même structure.
-              </p>
-            </div>
-
-            <div className={styles.galleryGrid}>
-              {project.screenshots.slice(1).map((item) => (
-                <div key={item.src} className={styles.galleryCard}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className={styles.galleryImage}
-                  />
-                  <div className={styles.galleryCaption}>{item.caption}</div>
-                </div>
-              ))}
-            </div>
+        {heroShot ? (
+          <ScrollReveal className={styles.visualHero}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={heroShot.src} alt={heroShot.alt} className={styles.heroImage} />
+            <p>{heroShot.caption}</p>
           </ScrollReveal>
         ) : null}
 
-        <ScrollReveal className={styles.section} delay={240}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Preuves publiques
-            </div>
-            <h2 className={styles.sectionTitle}>
-              Ce qu&apos;un recruteur peut vérifier
-            </h2>
-            <p className={styles.sectionIntro}>
-              J&apos;ai volontairement cadré ces projets avec des éléments
-              observables publiquement pour rester professionnel et crédible.
-            </p>
-          </div>
-
-          <div className={styles.proofGrid}>
-            <div className={styles.sectionCard}>
-              <h3 className={styles.cardTitle}>Preuves publiques</h3>
-              <div className={styles.list}>
-                {project.proofPoints.map((item) => (
-                  <div key={item} className={styles.listItem}>
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className={styles.sectionCard}>
-              <h3 className={styles.cardTitle}>Ce qu&apos;il faut retenir</h3>
-              <div className={styles.list}>
-                {project.recruiterTakeaways.map((item) => (
-                  <div key={item} className={styles.listItem}>
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className={styles.noteCard}>
-            <h3 className={styles.noteTitle}>Note de présentation</h3>
-            <p className={styles.noteText}>{project.publicNote}</p>
-          </div>
+        <ScrollReveal className={styles.quickRead}>
+          {quickRead.map((item) => (
+            <article key={item.label} className={styles.quickCard}>
+              <span>{item.label}</span>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </ScrollReveal>
 
-        <ScrollReveal className={styles.section} delay={280}>
+        <section className={styles.contentGrid}>
+          <div className={styles.story}>
+            <ScrollReveal className={styles.sectionBlock}>
+              <div className="badge">
+                <span className="badge-dot" />
+                Contexte
+              </div>
+              <h2>Le point de départ.</h2>
+              {content.context.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </ScrollReveal>
+
+            <ScrollReveal className={styles.sectionBlock} delay={80}>
+              <div className="badge">
+                <span className="badge-dot" />
+                Process
+              </div>
+              <h2>Une démarche en trois temps.</h2>
+              <div className={styles.timeline}>
+                {project.process.map((step, index) => (
+                  <article key={step.title} className={styles.timelineItem}>
+                    <span>{String(index + 1).padStart(2, "0")} · Process</span>
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </article>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal className={styles.sectionBlock} delay={120}>
+              <div className="badge">
+                <span className="badge-dot" />
+                Livrables
+              </div>
+              <h2>Ce qui a réellement été livré.</h2>
+              <div className={styles.cardsGrid}>
+                {project.deliverables.map((item, index) => (
+                  <article key={item} className={styles.sectionCard}>
+                    <h3>{item}</h3>
+                    <p>
+                      {project.deliverableDescriptions?.[index] ??
+                        "Livrable concret réalisé sur le projet."}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal className={styles.sectionBlock} delay={140}>
+              <div className="badge">
+                <span className="badge-dot" />
+                Décisions
+              </div>
+              <h2>Les choix qui donnent du niveau au produit.</h2>
+              <div className={styles.cardsGrid}>
+                {project.technicalDecisions.map((decision) => (
+                  <article key={decision.title} className={styles.sectionCard}>
+                    <h3>{decision.title}</h3>
+                    <p>{decision.description}</p>
+                  </article>
+                ))}
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal className={styles.beforeAfter} delay={180}>
+              <article>
+                <span>Avant</span>
+                <h3>Une expérience correcte, mais difficile à défendre.</h3>
+                <ul>
+                  {content.before.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+              <article>
+                <span>Après</span>
+                <h3>Une interface claire, crédible et plus simple à faire évoluer.</h3>
+                <ul>
+                  {content.after.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            </ScrollReveal>
+          </div>
+
+          <aside className={styles.stickyAside}>
+            <div className={styles.asideCard}>
+              <div className={styles.panelLabel}>À retenir</div>
+              <div className={styles.asideList}>
+                {content.aside.map((item) => (
+                  <div key={item}>
+                    <CheckIcon />
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <p className={styles.sourceNote}>{content.sourceNote}</p>
+            </div>
+          </aside>
+        </section>
+
+        <ScrollReveal className={styles.results}>
           <div className={styles.sectionHeader}>
             <div className="badge">
               <span className="badge-dot" />
               Résultats
             </div>
-            <h2 className={styles.sectionTitle}>
-              Ce que cette approche apporte
-            </h2>
-            <p className={styles.sectionIntro}>
-              Une bonne case study ne montre pas seulement ce qui a été fait,
-              mais ce que cela change pour les utilisateurs et pour
-              l&apos;équipe.
-            </p>
+            <h2>Ce que la refonte doit prouver.</h2>
+            <p>{project.summary}</p>
           </div>
 
           <div className={styles.metricsGrid}>
             {project.impact.map((item) => (
-              <div key={item.label} className={styles.metricCard}>
-                <div className={styles.metricValue}>{item.value}</div>
-                <div className={styles.metricLabel}>{item.label}</div>
-              </div>
+              <article key={item.label} className={styles.metricCard}>
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </article>
             ))}
           </div>
 
-          <div className={styles.sectionCard} style={{ marginTop: "1.25rem" }}>
-            <h3 className={styles.cardTitle}>Résultats qualitatifs</h3>
-            <div className={styles.list}>
+          <div className={styles.outcomesCard}>
+            <h3>Résultats qualitatifs</h3>
+            <div className={styles.asideList}>
               {project.outcomes.map((outcome) => (
-                <div key={outcome} className={styles.listItem}>
+                <div key={outcome}>
                   <CheckIcon />
                   <span>{outcome}</span>
                 </div>
               ))}
             </div>
-            <p className={styles.nextStep}>
-              <strong style={{ color: "rgba(255,255,255,0.82)" }}>
-                Étape suivante :
-              </strong>{" "}
-              {project.nextSteps}
+            <p>
+              <strong>Étape suivante :</strong> {project.nextSteps}
             </p>
           </div>
         </ScrollReveal>
 
-        <ScrollReveal className={styles.ctaCard} delay={320}>
+        <ScrollReveal className={styles.gallerySection}>
+          <div className={styles.sectionHeader}>
+            <div className="badge">
+              <span className="badge-dot" />
+              Interface
+            </div>
+            <h2>Quelques écrans clés.</h2>
+            <p>
+              Les captures montrent les choix de direction, de hiérarchie et de
+              parcours qui structurent le projet.
+            </p>
+          </div>
+
+          <div className={styles.galleryGrid}>
+            {(project.screenshots.length > 1
+              ? project.screenshots
+              : [heroShot, heroShot]
+            )
+              .filter(Boolean)
+              .map((item, index) => (
+                <figure key={`${item!.src}-${index}`} className={styles.galleryCard}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={item!.src}
+                    alt={item!.alt}
+                    className={styles.galleryImage}
+                  />
+                  <figcaption>{item!.caption}</figcaption>
+                </figure>
+              ))}
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal className={styles.ctaCard}>
           <div>
-            <h2 className={styles.ctaTitle}>Ce type de projet vous parle ?</h2>
-            <p className={styles.ctaText}>
-              Je peux vous aider à clarifier une expérience complexe, renforcer
-              la perception de qualité d&apos;un produit et construire une base
-              frontend plus fiable pour la suite.
+            <span>Projet suivant</span>
+            <h2>Vous voulez une page projet aussi claire pour votre produit ?</h2>
+            <p>
+              Je peux vous aider à transformer une idée, une vitrine ou une
+              application existante en produit plus clair, plus crédible et plus
+              simple à maintenir.
             </p>
           </div>
 
           <div className={styles.ctaActions}>
-            <Link href="/#contact" className="btn btn-primary">
+            <Link href="/#contact" className="btn btn-green">
               Me contacter
             </Link>
             <Link href="/#projects" className="btn btn-ghost">

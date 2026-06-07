@@ -1,54 +1,30 @@
 import Link from "next/link";
-import Image from "next/image";
 import styles from "@/app/page.module.css";
 
 export default function HeroSection() {
   return (
     <section className={`${styles.heroSection} container`}>
-      {/* Left column */}
-      <div className={`${styles.heroLeft} fade-up`}>
-        <div className={styles.heroProfile}>
-          <Image
-            src="/profile.jpg"
-            alt="Clovis Dylan - Développeur Frontend"
-            width={72}
-            height={72}
-            className={styles.heroProfilePhoto}
-          />
-        </div>
-
+      <div className={styles.heroLeft}>
         <div className={styles.availabilityBadge}>
-          <span className={styles.availabilityDot} />✶ Disponible pour missions
-          freelance
-        </div>
-
-        <div className={styles.heroBadge}>
-          <span className={styles.heroBadgeDot} />
-          Frontend Engineer • React / Next.js • Freelance Bénin
+          <span className={styles.availabilityDot}>Dispo · 2026</span>
+          Freelance front-end · React &amp; Next.js
         </div>
 
         <h1 className={styles.heroTitle}>
-          Développeur Frontend React &amp; Next.js —{" "}
-          <span className={styles.heroTitleAccent}>
-            je transforme vos produits SaaS en expériences rapides, claires et
-            mémorables.
-          </span>
+          Je conçois des interfaces{" "}
+          <span className={styles.heroTitleAccent}>nettes</span>, rapides et
+          faites pour durer.
         </h1>
 
         <p className={styles.heroSubtitle}>
-          Je suis{" "}
-          <strong style={{ color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>
-            Clovis Dylan
-          </strong>
-          , développeur frontend freelance basé à Cotonou (Bénin). Je conçois
-          des interfaces React et Next.js performantes pour des startups et
-          équipes produit SaaS exigeantes — de la landing page au dashboard
-          complet.
+          Développeur front-end spécialisé produits SaaS et fintech. Je
+          transforme des maquettes en interfaces vivantes, précises, accessibles
+          et performantes, du composant isolé à la refonte complète.
         </p>
 
         <div className={styles.heroButtons}>
-          <Link href="#projects" className="btn btn-primary">
-            Voir les projets
+          <Link href="#contact" className="btn btn-green">
+            Démarrer un projet
             <svg
               width="16"
               height="16"
@@ -62,109 +38,61 @@ export default function HeroSection() {
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>
-          <Link href="#contact" className="btn btn-ghost">
-            Me contacter
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <rect width="20" height="16" x="2" y="4" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
+          <Link href="#projects" className="btn btn-ghost">
+            Voir les projets
           </Link>
         </div>
 
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
-            <span className={styles.heroStatLabel}>Stack</span>
             <span className={styles.heroStatValue}>
-              React · Next.js · TypeScript · Flutter
+              React · Next.js · TypeScript
             </span>
           </div>
           <div className={styles.heroStat}>
-            <span className={styles.heroStatLabel}>Force</span>
             <span className={styles.heroStatValue}>
-              UI produit, full-stack &amp; architecture
+              Interfaces produit solides
             </span>
           </div>
           <div className={styles.heroStat}>
-            <span className={styles.heroStatLabel}>Livraison</span>
-            <span className={styles.heroStatValue}>
-              Propre, testée, accessible
-            </span>
+            <span className={styles.heroStatValue}>Réponse sous 24 h</span>
           </div>
         </div>
       </div>
 
-      {/* Right column — Snapshot card */}
-      <div className={`${styles.heroRight} fade-up-delay`}>
+      <div className={styles.heroRight}>
         <div className={styles.snapshotCard}>
           <div className={styles.snapshotHeader}>
-            <div>
-              <div className={styles.snapshotLabel}>
-                Aperçu de ma façon de construire
-              </div>
-              <div className={styles.snapshotTitle}>
-                Lisible, solide, prête à scaler
-              </div>
-            </div>
+            <div className={styles.snapshotLabel}>clovis.dev / dashboard</div>
           </div>
 
           <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Architecture de composants</div>
-            <div className={styles.metricDesc}>
-              Des APIs prévisibles, des états robustes et une base facile à
-              faire évoluer.
-            </div>
+            <div className={styles.metricTitle}>Performance</div>
+            <div className={styles.metricDesc}>Lighthouse 100</div>
           </div>
 
           <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>
-              Performance pensée dès le départ
-            </div>
-            <div className={styles.metricDesc}>
-              Des parcours fluides, des bundles maîtrisés et une navigation sans
-              inertie.
-            </div>
+            <div className={styles.metricTitle}>Système</div>
+            <div className={styles.metricDesc}>Tokens + composants</div>
           </div>
 
           <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Interactions accessibles</div>
-            <div className={styles.metricDesc}>
-              Des interfaces utilisables au clavier, compréhensibles et fiables
-              pour tous.
-            </div>
+            <div className={styles.metricTitle}>Livraison</div>
+            <div className={styles.metricDesc}>Code typé, clair</div>
           </div>
 
           <div className={styles.snapshotFooter}>
             <div className={styles.footerStat}>
               <span className={styles.footerStatValue}>UX</span>
-              <span className={styles.footerStatLabel}>sans friction</span>
+              <span className={styles.footerStatLabel}>nette</span>
             </div>
             <div className={styles.footerStat}>
               <span className={styles.footerStatValue}>A11y</span>
-              <span className={styles.footerStatLabel}>prise au sérieux</span>
+              <span className={styles.footerStatLabel}>mesurée</span>
             </div>
             <div className={styles.footerStat}>
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="rgba(255,255,255,0.9)"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-              <span className={styles.footerStatLabel}>Impact produit</span>
+              <span className={styles.footerStatValue}>+5</span>
+              <span className={styles.footerStatLabel}>ans web</span>
             </div>
           </div>
         </div>
