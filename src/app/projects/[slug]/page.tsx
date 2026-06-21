@@ -142,40 +142,6 @@ export async function generateMetadata(
   };
 }
 
-function CheckIcon() {
-  return (
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M5 12l5 5L20 7" />
-    </svg>
-  );
-}
-
-function ExternalIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M7 17 17 7M7 7h10v10" />
-    </svg>
-  );
-}
-
 export default async function ProjectCaseStudyPage({
   params,
 }: ProjectPageProps) {
@@ -188,329 +154,158 @@ export default async function ProjectCaseStudyPage({
 
   const heroShot = project.screenshots?.[0];
   const content = repoInsights[slug];
-  const quickRead = [
-    { label: "Problème", text: project.problem },
-    { label: "Solution", text: project.solution },
-    {
-      label: "Impact",
-      text: project.impact
-        .map((item) => `${item.label} : ${item.value}`)
-        .join(" / "),
-    },
-  ];
 
   return (
     <main className={styles.page}>
+      {/* Effet ambiant */}
+      <div className={styles.ambientBlobs} aria-hidden="true">
+        <div className={`${styles.blob} ${styles.blobGreen}`} />
+        <div className={`${styles.blob} ${styles.blobSteel}`} />
+      </div>
+
       <Navbar isProjectPage />
 
       <div className="container">
-        <section className={styles.hero}>
-          <ScrollReveal className={styles.heroContent}>
-            <Link href="/#projects" className={styles.backLink}>
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
-              Retour aux projets
-            </Link>
+        {/* Header de page centré */}
+        <header className={styles.header}>
+          <span className="eyebrow">{project.eyebrow}</span>
+          <h1 className={styles.title}>{project.title}</h1>
+          <div className={styles.metaList}>
+            <span>Client : {project.company || "Interne"}</span>
+            <span className={styles.metaSeparator}>|</span>
+            <span>Durée : {project.timeline}</span>
+            <span className={styles.metaSeparator}>|</span>
+            <span>Rôle : {project.role}</span>
+            <span className={styles.metaSeparator}>|</span>
+            <span>Stack : {project.techStack.slice(0, 3).join(", ")}</span>
+          </div>
+        </header>
 
-            <div className="badge">
-              <span className="badge-dot" />
-              {project.eyebrow}
+        {/* Hero Image Pleine Largeur */}
+        {heroShot && (
+          <ScrollReveal>
+            <div className={styles.heroImageWrapper}>
+              <Image
+                src={heroShot.src}
+                alt={heroShot.alt}
+                width={1200}
+                height={750}
+                className={styles.heroImage}
+                priority
+              />
             </div>
+          </ScrollReveal>
+        )}
 
-            <h1 className={styles.title}>
-              {project.title}, une case study{" "}
-              <span className="accent-word">produit</span>.
-            </h1>
-
+        {/* Corps Editorial Aligné à gauche */}
+        <article className={styles.articleBody}>
+          <ScrollReveal>
             <p className={styles.lead}>{content.heroLead}</p>
-
-            <div className={styles.heroActions}>
-              {project.liveUrl ? (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  Voir le site
-                  <ExternalIcon />
-                </a>
-              ) : null}
-              {project.repoUrl ? (
-                <a
-                  href={project.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-ghost"
-                >
-                  Voir le dépôt
-                  <ExternalIcon />
-                </a>
-              ) : null}
-            </div>
           </ScrollReveal>
 
-          <ScrollReveal className={styles.projectPanel} delay={120}>
-            <div className={styles.panelLabel}>Résumé projet</div>
-            <dl className={styles.metaList}>
-              <div>
-                <dt>Rôle</dt>
-                <dd>{project.role}</dd>
-              </div>
-              <div>
-                <dt>Timeline</dt>
-                <dd>{project.timeline}</dd>
-              </div>
-              <div>
-                <dt>Équipe</dt>
-                <dd>{project.team}</dd>
-              </div>
-              <div>
-                <dt>Statut</dt>
-                <dd>{project.status}</dd>
-              </div>
-            </dl>
-
-            <div className={styles.panelLabel}>Stack</div>
-            <div className={styles.techStack}>
-              {project.techStack.map((tech) => (
-                <span key={tech} className={styles.techBadge}>
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
-        </section>
-
-        {heroShot ? (
-          <ScrollReveal className={styles.visualHero}>
-            <Image
-              src={heroShot.src}
-              alt={heroShot.alt}
-              width={1200}
-              height={750}
-              style={{ width: "100%", height: "auto" }}
-              className={styles.heroImage}
-            />
-            <p>{heroShot.caption}</p>
-          </ScrollReveal>
-        ) : null}
-
-        <ScrollReveal className={styles.quickRead}>
-          {quickRead.map((item) => (
-            <article key={item.label} className={styles.quickCard}>
-              <span>{item.label}</span>
-              <p>{item.text}</p>
-            </article>
-          ))}
-        </ScrollReveal>
-
-        <section className={styles.contentGrid}>
-          <div className={styles.story}>
-            <ScrollReveal className={styles.sectionBlock}>
-              <div className="badge">
-                <span className="badge-dot" />
-                Contexte
-              </div>
-              <h2>Le point de départ.</h2>
-              {content.context.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </ScrollReveal>
-
-            <ScrollReveal className={styles.sectionBlock} delay={80}>
-              <div className="badge">
-                <span className="badge-dot" />
-                Process
-              </div>
-              <h2>Une démarche en trois temps.</h2>
-              <div className={styles.timeline}>
-                {project.process.map((step, index) => (
-                  <article key={step.title} className={styles.timelineItem}>
-                    <span>{String(index + 1).padStart(2, "0")}</span>
-                    <div>
-                      <h3>{step.title}</h3>
-                      <p>{step.description}</p>
-                    </div>
-                  </article>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal className={styles.sectionBlock} delay={120}>
-              <div className="badge">
-                <span className="badge-dot" />
-                Livrables
-              </div>
-              <h2>Ce qui a réellement été livré.</h2>
-              <div className={styles.cardsGrid}>
-                {project.deliverables.map((item, index) => (
-                  <article key={item} className={styles.sectionCard}>
-                    <h3>{item}</h3>
-                    <p>
-                      {project.deliverableDescriptions?.[index] ??
-                        "Livrable concret réalisé sur le projet."}
-                    </p>
-                  </article>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal className={styles.sectionBlock} delay={140}>
-              <div className="badge">
-                <span className="badge-dot" />
-                Décisions
-              </div>
-              <h2>Les choix qui donnent du niveau au produit.</h2>
-              <div className={styles.cardsGrid}>
-                {project.technicalDecisions.map((decision) => (
-                  <article key={decision.title} className={styles.sectionCard}>
-                    <h3>{decision.title}</h3>
-                    <p>{decision.description}</p>
-                  </article>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            <ScrollReveal className={styles.beforeAfter} delay={180}>
-              <article>
-                <span>Avant</span>
-                <h3>Une expérience correcte, mais difficile à défendre.</h3>
-                <ul>
-                  {content.before.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-              <article>
-                <span>Après</span>
-                <h3>
-                  Une interface claire, crédible et plus simple à faire évoluer.
-                </h3>
-                <ul>
-                  {content.after.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            </ScrollReveal>
-          </div>
-
-          <aside className={styles.stickyAside}>
-            <div className={styles.asideCard}>
-              <div className={styles.panelLabel}>À retenir</div>
-              <div className={styles.asideList}>
-                {content.aside.map((item) => (
-                  <div key={item}>
-                    <CheckIcon />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </aside>
-        </section>
-
-        <ScrollReveal className={styles.results}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Résultats
-            </div>
-            <h2>Ce que la refonte doit prouver.</h2>
-            <p>{project.summary}</p>
-          </div>
-
-          <div className={styles.metricsGrid}>
-            {project.impact.map((item) => (
-              <article key={item.label} className={styles.metricCard}>
-                <strong>{item.value}</strong>
-                <span>{item.label}</span>
-              </article>
+          <ScrollReveal>
+            <h2>Le contexte</h2>
+            {content.context.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
             ))}
-          </div>
+          </ScrollReveal>
 
-          <div className={styles.outcomesCard}>
-            <h3>Résultats qualitatifs</h3>
-            <div className={styles.asideList}>
-              {project.outcomes.map((outcome) => (
-                <div key={outcome}>
-                  <CheckIcon />
-                  <span>{outcome}</span>
+          <ScrollReveal>
+            <h2>Le problème</h2>
+            <p>{project.problem}</p>
+            <ul>
+              {content.before.map((item, index) => (
+                <li key={index}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <h2>La démarche</h2>
+            <p>{project.solution}</p>
+            <div style={{ marginTop: "32px" }}>
+              {project.process.map((step) => (
+                <div key={step.title} className={styles.step}>
+                  <h3>{step.title}</h3>
+                  <p>{step.description}</p>
                 </div>
               ))}
             </div>
-            <p>
-              <strong>Étape suivante :</strong> {project.nextSteps}
-            </p>
-          </div>
-        </ScrollReveal>
+          </ScrollReveal>
 
-        <ScrollReveal className={styles.gallerySection}>
-          <div className={styles.sectionHeader}>
-            <div className="badge">
-              <span className="badge-dot" />
-              Interface
-            </div>
-            <h2>Quelques écrans clés.</h2>
-            <p>
-              Les captures montrent les choix de direction, de hiérarchie et de
-              parcours qui structurent le projet.
-            </p>
-          </div>
+          <ScrollReveal>
+            <h2>Le résultat</h2>
+            <ul>
+              {project.impact.map((imp) => (
+                <li key={imp.label}>
+                  <strong className={styles.resultLabel}>{imp.label} :</strong> {imp.value}
+                </li>
+              ))}
+            </ul>
+          </ScrollReveal>
+        </article>
 
-          <div className={styles.galleryGrid}>
-            {project.screenshots.filter(Boolean).map((item, index) => (
-              <figure
-                key={`${item!.src}-${index}`}
-                className={styles.galleryCard}
-              >
-                <Image
-                  src={item!.src}
-                  alt={item!.alt}
-                  width={1200}
-                  height={750}
-                  style={{ width: "100%", height: "auto" }}
-                  className={styles.galleryImage}
-                />
-                <figcaption>{item!.caption}</figcaption>
-              </figure>
+        {/* Images Secondaires Pleine Largeur */}
+        {project.screenshots && project.screenshots.length > 1 && (
+          <div style={{ marginTop: "64px" }}>
+            {project.screenshots.slice(1).map((shot, index) => (
+              <ScrollReveal key={index}>
+                <div className={styles.heroImageWrapper}>
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={1200}
+                    height={750}
+                    className={styles.heroImage}
+                  />
+                  {shot.caption && (
+                    <p className={styles.imageCaption}>{shot.caption}</p>
+                  )}
+                </div>
+              </ScrollReveal>
             ))}
           </div>
-        </ScrollReveal>
+        )}
 
-        <ScrollReveal className={styles.ctaCard}>
-          <div>
-            <span>Projet suivant</span>
-            <h2>
-              Vous voulez une page projet aussi claire pour votre produit ?
-            </h2>
-            <p>
-              Je peux vous aider à transformer une idée, une vitrine ou une
-              application existante en produit plus clair, plus crédible et plus
-              simple à maintenir.
-            </p>
-          </div>
-
-          <div className={styles.ctaActions}>
-            <Link href="/#contact" className="btn btn-green">
-              Me contacter
-            </Link>
-            <Link href="/#projects" className="btn btn-ghost">
-              Voir les autres projets
-            </Link>
-          </div>
-        </ScrollReveal>
+        {/* Navigation de fin de page */}
+        <footer className={styles.footerNav}>
+          <Link href="/#projects" className="btn btn-ghost">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              style={{ marginRight: "8px" }}
+            >
+              <path d="m15 18-6-6 6-6" />
+            </svg>
+            Retour aux projets
+          </Link>
+          {project.liveUrl && (
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn btn-green">
+              Visiter le site
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                style={{ marginLeft: "8px" }}
+              >
+                <path d="M7 17 17 7M7 7h10v10" />
+              </svg>
+            </a>
+          )}
+        </footer>
       </div>
     </main>
   );

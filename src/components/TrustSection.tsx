@@ -19,10 +19,7 @@ export default function TrustSection() {
     <section className="section container">
       <div className={styles.trustGrid}>
         <div className={styles.trustIntro}>
-          <div className="badge">
-            <span className="badge-dot" />
-            Pourquoi me faire confiance
-          </div>
+          <span className="eyebrow" style={{ textAlign: "left" }}>POURQUOI ME FAIRE CONFIANCE</span>
           <h2>
             Un développeur qui relie design, logique métier et qualité
             technique.

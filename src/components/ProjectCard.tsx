@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/app/page.module.css";
 
 interface ProjectCardProps {
@@ -10,68 +11,42 @@ interface ProjectCardProps {
   solution: string;
   techStack: string[];
   ctaLabel?: string;
+  imageSrc?: string;
 }
 
 export default function ProjectCard({
   index,
   slug,
   title,
-  company,
   problem,
-  solution,
-  techStack,
-  ctaLabel = "Voir l'approche",
+  imageSrc,
 }: ProjectCardProps) {
+  // Décalage asymétrique pour la 2ème colonne (index impair) sur desktop
+  const isOffset = index % 2 !== 0;
+
   return (
-    <article className={styles.projectCard}>
-      <div className={styles.projectCardIcon}>
-        {String(index + 1).padStart(2, "0")}
+    <Link
+      href={`/projects/${slug}`}
+      className={`${styles.projectCard} ${isOffset ? styles.projectCardOffset : ""}`}
+    >
+      <div className={styles.projectImageWrapper}>
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={`Aperçu du projet ${title}`}
+            fill
+            className={styles.projectImage}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        ) : (
+          <div className={styles.projectImageFallback} />
+        )}
+        <div className={styles.projectImageOverlay}></div>
       </div>
-
-      <div className={styles.projectCardHeader}>
-        <div>
-          <h3 className={styles.projectCardTitle}>{title}</h3>
-          {company ? (
-            <div className={styles.projectCardMeta}>{company}</div>
-          ) : null}
-        </div>
+      <div className={styles.projectInfo}>
+        <h3 className={styles.projectCardTitle}>{title}</h3>
+        <p className={styles.projectCardText}>{problem}</p>
       </div>
-
-      <p className={styles.projectCardText}>
-        <strong>Contexte :</strong> {problem}
-      </p>
-      <p className={styles.projectCardText}>
-        <strong>Réponse :</strong> {solution}
-      </p>
-
-      <div className={styles.techBadges}>
-        {techStack.slice(0, 4).map((tech) => (
-          <span key={tech} className={styles.techBadge}>
-            {tech}
-          </span>
-        ))}
-      </div>
-
-      <div className={styles.projectCardFooter}>
-        <Link
-          href={`/projects/${slug}`}
-          className={styles.footerBtn}
-          aria-label={`${ctaLabel} : ${title}`}
-        >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M7 17 17 7M7 7h10v10" />
-          </svg>
-        </Link>
-      </div>
-    </article>
+    </Link>
   );
 }

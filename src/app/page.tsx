@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import ProjectCard from "@/components/ProjectCard";
 import SkillsSection from "@/components/SkillsSection";
 import AboutSection from "@/components/AboutSection";
+import BioSection from "@/components/BioSection";
 import ContactSection from "@/components/ContactSection";
 import ServicesSection from "@/components/ServicesSection";
 import TrustSection from "@/components/TrustSection";
@@ -44,20 +45,13 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" className="section container">
         <ScrollReveal>
-          <div className="section-heading">
-            <div className="badge">
-              <span className="badge-dot" />
-              Sélection
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-end', borderBottom: '1px solid var(--line)', paddingBottom: '32px', marginBottom: '64px', maxWidth: 'none' }}>
+            <div>
+              <h2 style={{ marginBottom: 0 }}>Projets Récents</h2>
             </div>
-            <h2>
-              Des produits sur lesquels j&apos;ai{" "}
-              <span className="accent-word">livré</span>.
-            </h2>
-            <p>
-              Chaque projet part d&apos;un vrai problème produit : clarifier une
-              interface, accélérer un parcours, réduire la friction ou rendre un
-              système plus facile à faire évoluer.
-            </p>
+            <a href="#projects" style={{ fontSize: '12px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--ink)' }} className="text-link hidden md:inline-block">
+              Voir tout le portfolio
+            </a>
           </div>
         </ScrollReveal>
 
@@ -73,6 +67,7 @@ export default function Home() {
                 solution={p.solution}
                 techStack={p.techStack}
                 ctaLabel={p.ctaLabel}
+                imageSrc={p.screenshots?.[0]?.src}
               />
             </ScrollReveal>
           ))}
@@ -89,10 +84,7 @@ export default function Home() {
         <div className="container">
           <ScrollReveal>
             <div className="section-heading">
-              <div className="badge">
-                <span className="badge-dot" />
-                Stack
-              </div>
+              <span className="eyebrow">STACK TECHNIQUE</span>
               <h2>Une boîte à outils choisie, pas accumulée.</h2>
               <p>
                 Les outils sur lesquels j&apos;interviens au quotidien,
@@ -116,6 +108,10 @@ export default function Home() {
       </ScrollReveal>
 
       <ScrollReveal>
+        <BioSection />
+      </ScrollReveal>
+
+      <ScrollReveal>
         <FAQSection />
       </ScrollReveal>
 
@@ -124,38 +120,22 @@ export default function Home() {
         <ContactSection />
       </ScrollReveal>
 
-      {/* Footer */}
-      <footer className={`${styles.footer} container`}>
+      <footer className={styles.footer}>
         <div className={styles.footerInner}>
-          <div className={styles.footerLeft}>
-            <span>
-              © 2026 Clovis Ahouandjinou. Construit avec Next.js, React et
-              TypeScript.
-            </span>
-          </div>
+          <p className={styles.footerLeft}>
+            © 2026 Clovis Ahouandjinou. Typographies : Bricolage Grotesque & Be Vietnam Pro.
+          </p>
 
-          {/* Social Links in Footer */}
           <div className={styles.footerSocials}>
-            <a
-              href="https://github.com/Dilane17"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <GitHubIcon />
+            <a href="https://github.com/Dilane17" target="_blank" rel="noopener noreferrer">
+              GITHUB
             </a>
-            <a
-              href="https://x.com/dylankodee"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="X / Twitter"
-            >
-              <XIcon />
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+              LINKEDIN
             </a>
-          </div>
-
-          <div className={styles.footerRight}>
-            Conçu et codé à Cotonou. Typographies : Bricolage Grotesque & Poppins.
+            <a href="/cv-clovis-dylan.pdf" target="_blank" rel="noopener noreferrer">
+              DOWNLOAD CV
+            </a>
           </div>
         </div>
       </footer>

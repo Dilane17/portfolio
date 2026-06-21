@@ -61,11 +61,8 @@ export default function FAQSection() {
   return (
     <section id="faq" className="section container">
       <div className="section-heading">
-        <div className="badge">
-          <span className="badge-dot" />
-          FAQ
-        </div>
-        <h2>Les questions qu&apos;on me pose souvent</h2>
+        <span className="eyebrow">FAQ</span>
+        <h2>Questions fréquentes</h2>
         <p>
           Avant de démarrer un projet, voici ce que mes clients me demandent le plus
           souvent. Si votre question n&apos;est pas là, écrivez-moi directement.

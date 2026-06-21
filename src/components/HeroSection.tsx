@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/app/page.module.css";
 
 export default function HeroSection() {
   return (
     <section className={`${styles.heroSection} container`}>
-      <div className={styles.heroLeft}>
-        <div style={{ textAlign: "center" }}>
+      <div className={styles.heroContent}>
+        <div className={styles.heroBadgeWrapper}>
           <div className={styles.availabilityBadge}>
             <span className={styles.availabilityDot}>Disponible en 2026</span>
             Freelance front-end, expert React & Next.js
@@ -45,57 +46,20 @@ export default function HeroSection() {
           </Link>
         </div>
 
-        <div className={styles.heroStats}>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>
-              React / Next.js / TypeScript
-            </span>
+        <div className={styles.heroIndicators}>
+          <div className={styles.heroIndicator}>
+            <strong>+5 ans</strong>
+            <span>d'expérience web</span>
           </div>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>
-              Interfaces produit solides
-            </span>
+          <div className={styles.indicatorSeparator}></div>
+          <div className={styles.heroIndicator}>
+            <strong>100</strong>
+            <span>Score Lighthouse</span>
           </div>
-          <div className={styles.heroStat}>
-            <span className={styles.heroStatValue}>Réponse sous 24 h</span>
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.heroRight}>
-        <div className={styles.snapshotCard}>
-          <div className={styles.snapshotHeader}>
-            <div className={styles.snapshotLabel}>clovis.dev / dashboard</div>
-          </div>
-
-          <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Performance</div>
-            <div className={styles.metricDesc}>Lighthouse 100</div>
-          </div>
-
-          <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Système</div>
-            <div className={styles.metricDesc}>Tokens + composants</div>
-          </div>
-
-          <div className={styles.metricItem}>
-            <div className={styles.metricTitle}>Livraison</div>
-            <div className={styles.metricDesc}>Code typé, clair</div>
-          </div>
-
-          <div className={styles.snapshotFooter}>
-            <div className={styles.footerStat}>
-              <span className={styles.footerStatValue}>UX</span>
-              <span className={styles.footerStatLabel}>nette</span>
-            </div>
-            <div className={styles.footerStat}>
-              <span className={styles.footerStatValue}>A11y</span>
-              <span className={styles.footerStatLabel}>mesurée</span>
-            </div>
-            <div className={styles.footerStat}>
-              <span className={styles.footerStatValue}>+5</span>
-              <span className={styles.footerStatLabel}>ans web</span>
-            </div>
+          <div className={styles.indicatorSeparator}></div>
+          <div className={styles.heroIndicator}>
+            <strong>&lt; 24h</strong>
+            <span>Temps de réponse</span>
           </div>
         </div>
       </div>

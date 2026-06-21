@@ -54,18 +54,8 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
 
           {/* Right side: CTA (Desktop) */}
           <div className={styles.navActions}>
-            <a
-              href="/cv-clovis-dylan.pdf"
-              download="CV-Clovis-Dylan-Frontend.pdf"
-              className={styles.navLinkBtn}
-            >
-              Télécharger le CV
-            </a>
-            <Link href={contactHref} className={styles.navLinkBtn}>
+            <Link href={contactHref} className="btn btn-green">
               Discuter
-            </Link>
-            <Link href={projectsHref} className="btn btn-primary">
-              Voir les projets
             </Link>
           </div>
 
@@ -100,16 +90,8 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
         </ul>
 
         <div className={styles.mobileNavActions}>
-          <a
-            href="/cv-clovis-dylan.pdf"
-            download="CV-Clovis-Dylan-Frontend.pdf"
-            className="btn btn-ghost"
-            onClick={closeMenu}
-          >
-            Télécharger le CV
-          </a>
-          <Link href={contactHref} className="btn btn-primary" onClick={closeMenu}>
-            Démarrer un projet
+          <Link href={contactHref} className="btn btn-green" onClick={closeMenu}>
+            Discuter
           </Link>
         </div>
       </div>

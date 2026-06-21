@@ -9,7 +9,7 @@ export default function AboutSection({ approach, metrics }: AboutProps) {
   return (
     <section id="about" className="section container">
       <div className="section-heading">
-        <div className="badge"><span className="badge-dot" />Approche</div>
+        <span className="eyebrow">APPROCHE PRODUIT</span>
         <h2>Une exigence produit, pas juste visuelle</h2>
         <p>
           J&apos;aime les interfaces qui ont du niveau, mais surtout une logique:
