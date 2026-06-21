@@ -19,7 +19,7 @@
       "problem": "Il fallait construire une plateforme de location de véhicules de luxe capable de présenter l'offre avec un niveau de finition premium, tout en gérant les réservations, les contenus et les opérations administratives dans un seul produit cohérent.",
       "solution": "J'ai conçu une expérience orientée conversion avec catalogue, fiches véhicules, tunnel de réservation, back-office protégé et intégrations métier pour gérer les demandes, les images et les notifications.",
       "techStack": [
-        "Next.js 16",
+        "Next.js 15",
         "TypeScript",
         "Supabase",
         "Cloudinary",

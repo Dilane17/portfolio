@@ -18,14 +18,13 @@ const repoInsights: Record<
     before: string[];
     after: string[];
     aside: string[];
-    sourceNote: string;
   }
 > = {
   "ares-drive": {
     heroLead:
       "Ares Drive est une plateforme de location de véhicules premium construite comme un produit complet : vitrine, catalogue, fiches véhicules, tunnel de réservation, API, notifications et back-office administrateur.",
     context: [
-      "Le dépôt montre une architecture Next.js 16 structurée autour de zones métier distinctes : homepage, catalogue, fiches véhicules, réservation, administration protégée et API de réservation.",
+      "Le dépôt montre une architecture Next.js 15 structurée autour de zones métier distinctes : homepage, catalogue, fiches véhicules, réservation, administration protégée et API de réservation.",
       "Le besoin allait au-delà d'une simple page marketing. Le produit devait séduire côté client, gérer des médias haut de gamme via Cloudinary, enregistrer les demandes dans Supabase et prévenir l'équipe par email avec Resend.",
       "Le flux de réservation a été pensé pour ne pas bloquer l'utilisateur : WhatsApp s'ouvre immédiatement, tandis que l'API persiste la demande et déclenche l'email administrateur côté serveur.",
     ],
@@ -44,8 +43,6 @@ const repoInsights: Record<
       "Back-office protégé par Supabase Auth et middleware.",
       "Flux métier complet : Supabase, Cloudinary, Resend, WhatsApp et Playwright.",
     ],
-    sourceNote:
-      "Sources utilisées : README et package.json du repo Dilane17/ares-drive.",
   },
   "asmi-transfert": {
     heroLead:
@@ -70,8 +67,6 @@ const repoInsights: Record<
       "Direction visuelle documentée : rouge, bleu, noir, blanc et typographie Karst.",
       "Animations Framer Motion, SEO, accessibilité et micro-interactions.",
     ],
-    sourceNote:
-      "Sources utilisées : README et package.json du repo Dilane17/asmi-transfert.",
   },
   "atelier-bossart": {
     heroLead:
@@ -96,8 +91,6 @@ const repoInsights: Record<
       "Usage de Lucide React pour une iconographie légère et cohérente.",
       "Positionnement premium adapté à un studio audiovisuel.",
     ],
-    sourceNote:
-      "Sources utilisées : package.json du repo privé Dilane17/Bossart- et données portfolio.",
   },
 };
 
@@ -115,7 +108,7 @@ export async function generateMetadata(
 
   if (!project) {
     return {
-      title: "Projet introuvable | Clovis Dylan",
+      title: "Projet introuvable | Clovis Ahouandjinou",
     };
   }
 
@@ -135,7 +128,7 @@ export async function generateMetadata(
           url: `/case-studies/${slug}/og.png`,
           width: 1200,
           height: 630,
-          alt: `${project.title} — Case Study | Clovis Dylan`,
+          alt: `${project.title} — Case Study | Clovis Ahouandjinou`,
         },
       ],
     },
@@ -301,7 +294,11 @@ export default async function ProjectCaseStudyPage({
         {heroShot ? (
           <ScrollReveal className={styles.visualHero}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={heroShot.src} alt={heroShot.alt} className={styles.heroImage} />
+            <img
+              src={heroShot.src}
+              alt={heroShot.alt}
+              className={styles.heroImage}
+            />
             <p>{heroShot.caption}</p>
           </ScrollReveal>
         ) : null}
@@ -392,7 +389,9 @@ export default async function ProjectCaseStudyPage({
               </article>
               <article>
                 <span>Après</span>
-                <h3>Une interface claire, crédible et plus simple à faire évoluer.</h3>
+                <h3>
+                  Une interface claire, crédible et plus simple à faire évoluer.
+                </h3>
                 <ul>
                   {content.after.map((item) => (
                     <li key={item}>{item}</li>
@@ -413,7 +412,6 @@ export default async function ProjectCaseStudyPage({
                   </div>
                 ))}
               </div>
-              <p className={styles.sourceNote}>{content.sourceNote}</p>
             </div>
           </aside>
         </section>
@@ -467,29 +465,29 @@ export default async function ProjectCaseStudyPage({
           </div>
 
           <div className={styles.galleryGrid}>
-            {(project.screenshots.length > 1
-              ? project.screenshots
-              : [heroShot, heroShot]
-            )
-              .filter(Boolean)
-              .map((item, index) => (
-                <figure key={`${item!.src}-${index}`} className={styles.galleryCard}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={item!.src}
-                    alt={item!.alt}
-                    className={styles.galleryImage}
-                  />
-                  <figcaption>{item!.caption}</figcaption>
-                </figure>
-              ))}
+            {project.screenshots.filter(Boolean).map((item, index) => (
+              <figure
+                key={`${item!.src}-${index}`}
+                className={styles.galleryCard}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item!.src}
+                  alt={item!.alt}
+                  className={styles.galleryImage}
+                />
+                <figcaption>{item!.caption}</figcaption>
+              </figure>
+            ))}
           </div>
         </ScrollReveal>
 
         <ScrollReveal className={styles.ctaCard}>
           <div>
             <span>Projet suivant</span>
-            <h2>Vous voulez une page projet aussi claire pour votre produit ?</h2>
+            <h2>
+              Vous voulez une page projet aussi claire pour votre produit ?
+            </h2>
             <p>
               Je peux vous aider à transformer une idée, une vitrine ou une
               application existante en produit plus clair, plus crédible et plus

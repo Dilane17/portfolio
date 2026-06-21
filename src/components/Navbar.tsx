@@ -22,7 +22,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
         <Link href={homeHref} className={styles.navBrand}>
           <span className={styles.brandBadge}>CD</span>
           <span>
-            <span className={styles.brandName}>Clovis Dylan</span>
+            <span className={styles.brandName}>Clovis Ahouandjinou</span>
             <span className={styles.brandRole}>Développeur Front-End</span>
           </span>
         </Link>
@@ -61,10 +61,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
           <Link href={contactHref} className={styles.navLinkBtn}>
             Discuter
           </Link>
-          <Link
-            href={projectsHref}
-            className="btn btn-primary"
-          >
+          <Link href={projectsHref} className="btn btn-primary">
             Voir les projets
           </Link>
         </div>

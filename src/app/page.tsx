@@ -7,7 +7,6 @@ import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import ServicesSection from "@/components/ServicesSection";
 import TrustSection from "@/components/TrustSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ScrollReveal from "@/components/ScrollReveal";
 import styles from "./page.module.css";
@@ -120,10 +119,6 @@ export default function Home() {
         <FAQSection />
       </ScrollReveal>
 
-      <ScrollReveal>
-        <TestimonialsSection />
-      </ScrollReveal>
-
       {/* Contact */}
       <ScrollReveal>
         <ContactSection />
@@ -134,14 +129,15 @@ export default function Home() {
         <div className={styles.footerInner}>
           <div className={styles.footerLeft}>
             <span>
-              © 2026 Clovis Dylan. Construit avec Next.js, React et TypeScript.
+              © 2026 Clovis Ahouandjinou. Construit avec Next.js, React et
+              TypeScript.
             </span>
           </div>
 
           {/* Social Links in Footer */}
           <div className={styles.footerSocials}>
             <a
-              href="https://github.com/clovisdylan"
+              href="https://github.com/Dilane17"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -149,15 +145,7 @@ export default function Home() {
               <GitHubIcon />
             </a>
             <a
-              href="https://linkedin.com/in/clovisdylan"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <LinkedInIcon />
-            </a>
-            <a
-              href="https://x.com/clovisdylan"
+              href="https://x.com/dylankodee"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X / Twitter"
