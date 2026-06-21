@@ -27,7 +27,7 @@ const services: ServiceCard[] = [
     icon: <LayoutDashboard size={22} />,
     title: "Application Web & SaaS",
     description:
-      "Du dashboard produit à la plateforme complète — je conçois et développe des interfaces web robustes, scalables et agréables à utiliser, avec authentification, gestion d'état et API intégrées.",
+      "Du dashboard produit à la plateforme complète, je conçois et développe des interfaces web robustes, scalables et agréables à utiliser, avec authentification, gestion d'état et API intégrées.",
     tags: ["React", "TypeScript", "API REST", "Auth"],
   },
   {
@@ -69,7 +69,7 @@ export default function ServicesSection() {
             <span className="badge-dot" />
             Services
           </div>
-          <h2>Ce que je fais — et comment je l&apos;aborde.</h2>
+          <h2>Ce que je fais, et comment je l&apos;aborde.</h2>
           <p>
             Une intervention front-end calibrée pour des équipes produit qui
             veulent avancer vite, sans rien lâcher sur le niveau

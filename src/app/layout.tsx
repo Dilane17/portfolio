@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     title: "Clovis Ahouandjinou | Développeur Frontend React Next.js Freelance",
     description:
-      "Des interfaces React et Next.js performantes pour des produits SaaS exigeants — de la landing page au dashboard complet.",
+      "Des interfaces React et Next.js performantes pour des produits SaaS exigeants, de la landing page au dashboard complet.",
     siteName: "Clovis Ahouandjinou Portfolio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Clovis Ahouandjinou — Développeur Frontend React Next.js Freelance",
+        alt: "Clovis Ahouandjinou - Développeur Frontend React Next.js Freelance",
       },
     ],
   },

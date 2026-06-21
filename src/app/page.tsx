@@ -155,7 +155,7 @@ export default function Home() {
           </div>
 
           <div className={styles.footerRight}>
-            Conçu et codé à Cotonou · Bricolage Grotesque · Poppins
+            Conçu et codé à Cotonou. Typographies : Bricolage Grotesque & Poppins.
           </div>
         </div>
       </footer>

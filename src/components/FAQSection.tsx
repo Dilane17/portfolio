@@ -12,7 +12,7 @@ const faqs: FAQItem[] = [
   {
     question: "Combien coûte un projet ?",
     answer:
-      "Chaque projet est unique — je ne propose pas de tarifs fixes. Après un premier échange pour comprendre votre besoin, je vous envoie un devis détaillé avec le périmètre, les délais et le coût. Pas de surprises en cours de route.",
+      "Chaque projet est unique. Je ne propose pas de tarifs fixes. Après un premier échange pour comprendre votre besoin, je vous envoie un devis détaillé avec le périmètre, les délais et le coût. Pas de surprises en cours de route.",
   },
   {
     question: "Combien de temps faut-il pour livrer un projet ?",
@@ -27,7 +27,7 @@ const faqs: FAQItem[] = [
   {
     question: "Proposez-vous de la maintenance après livraison ?",
     answer:
-      "Oui. Une fois votre projet livré, je reste disponible pour la maintenance, les corrections de bugs et les évolutions. Nous convenons ensemble des modalités selon vos besoins — intervention ponctuelle ou suivi régulier.",
+      "Oui. Une fois votre projet livré, je reste disponible pour la maintenance, les corrections de bugs et les évolutions. Nous convenons ensemble des modalités selon vos besoins : intervention ponctuelle ou suivi régulier.",
   },
   {
     question: "Puis-je gérer mon site moi-même après la livraison ?",
@@ -104,7 +104,9 @@ export default function FAQSection() {
               <div
                 className={`${styles.faqAnswer} ${isOpen ? styles.faqAnswerOpen : ""}`}
               >
-                <p>{item.answer}</p>
+                <div className={styles.faqAnswerInner}>
+                  <p>{item.answer}</p>
+                </div>
               </div>
             </div>
           );

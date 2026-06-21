@@ -1,5 +1,5 @@
 .page {
-  min-height: 100vh;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at 78% 12%, rgba(2, 245, 161, 0.12), transparent 24rem),
     linear-gradient(180deg, var(--bg-cream), #fff 34rem);

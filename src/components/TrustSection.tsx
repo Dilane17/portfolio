@@ -33,7 +33,7 @@ export default function TrustSection() {
             maintenir et crédible face à vos clients.
           </p>
           <div className={styles.trustActions}>
-            <Link href="#contact" className="btn btn-primary">
+            <Link href="#contact" className="btn btn-green">
               Discuter d&apos;un projet
             </Link>
             <Link href="#services" className="btn btn-ghost">

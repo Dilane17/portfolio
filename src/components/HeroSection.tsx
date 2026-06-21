@@ -5,9 +5,11 @@ export default function HeroSection() {
   return (
     <section className={`${styles.heroSection} container`}>
       <div className={styles.heroLeft}>
-        <div className={styles.availabilityBadge}>
-          <span className={styles.availabilityDot}>Dispo · 2026</span>
-          Freelance front-end · React &amp; Next.js
+        <div style={{ textAlign: "center" }}>
+          <div className={styles.availabilityBadge}>
+            <span className={styles.availabilityDot}>Disponible en 2026</span>
+            Freelance front-end, expert React & Next.js
+          </div>
         </div>
 
         <h1 className={styles.heroTitle}>
@@ -46,7 +48,7 @@ export default function HeroSection() {
         <div className={styles.heroStats}>
           <div className={styles.heroStat}>
             <span className={styles.heroStatValue}>
-              React · Next.js · TypeScript
+              React / Next.js / TypeScript
             </span>
           </div>
           <div className={styles.heroStat}>

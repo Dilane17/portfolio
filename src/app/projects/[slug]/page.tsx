@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
@@ -128,7 +129,7 @@ export async function generateMetadata(
           url: `/case-studies/${slug}/og.png`,
           width: 1200,
           height: 630,
-          alt: `${project.title} — Case Study | Clovis Ahouandjinou`,
+          alt: `${project.title} - Case Study | Clovis Ahouandjinou`,
         },
       ],
     },
@@ -194,7 +195,7 @@ export default async function ProjectCaseStudyPage({
       label: "Impact",
       text: project.impact
         .map((item) => `${item.label} : ${item.value}`)
-        .join(" · "),
+        .join(" / "),
     },
   ];
 
@@ -293,10 +294,12 @@ export default async function ProjectCaseStudyPage({
 
         {heroShot ? (
           <ScrollReveal className={styles.visualHero}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               src={heroShot.src}
               alt={heroShot.alt}
+              width={1200}
+              height={750}
+              style={{ width: "100%", height: "auto" }}
               className={styles.heroImage}
             />
             <p>{heroShot.caption}</p>
@@ -334,9 +337,11 @@ export default async function ProjectCaseStudyPage({
               <div className={styles.timeline}>
                 {project.process.map((step, index) => (
                   <article key={step.title} className={styles.timelineItem}>
-                    <span>{String(index + 1).padStart(2, "0")} · Process</span>
-                    <h3>{step.title}</h3>
-                    <p>{step.description}</p>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    <div>
+                      <h3>{step.title}</h3>
+                      <p>{step.description}</p>
+                    </div>
                   </article>
                 ))}
               </div>
@@ -470,10 +475,12 @@ export default async function ProjectCaseStudyPage({
                 key={`${item!.src}-${index}`}
                 className={styles.galleryCard}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src={item!.src}
                   alt={item!.alt}
+                  width={1200}
+                  height={750}
+                  style={{ width: "100%", height: "auto" }}
                   className={styles.galleryImage}
                 />
                 <figcaption>{item!.caption}</figcaption>

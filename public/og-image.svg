@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#07191e"/>
+  <rect x="0" y="620" width="1200" height="10" fill="#02f5a1"/>
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="100" y="100" width="80" height="80" rx="20" fill="#02f5a1"/>
+  <text x="140" y="152" font-family="sans-serif" font-weight="bold" font-size="36" fill="#07191e" text-anchor="middle">CD</text>
+
+  <text x="100" y="320" font-family="sans-serif" font-weight="bold" font-size="76" fill="#ffffff">Clovis Ahouandjinou</text>
+  <text x="100" y="400" font-family="sans-serif" font-weight="bold" font-size="42" fill="#02f5a1">Développeur Frontend React Next.js</text>
+  
+  <text x="100" y="470" font-family="sans-serif" font-size="32" fill="#7a8a90">Interfaces produit solides, nettes et faites pour durer.</text>
+  
+  <text x="1100" y="550" font-family="sans-serif" font-weight="bold" font-size="28" fill="#ffffff" opacity="0.6" text-anchor="end">dylan-dev.me</text>
+</svg>
