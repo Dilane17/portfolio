@@ -48,8 +48,8 @@ export default function HeroSection() {
 
         <div className={styles.heroIndicators}>
           <div className={styles.heroIndicator}>
-            <strong>+5 ans</strong>
-            <span>d'expérience web</span>
+            <strong>8</strong>
+            <span>de projets réalisés</span> 
           </div>
           <div className={styles.indicatorSeparator}></div>
           <div className={styles.heroIndicator}>

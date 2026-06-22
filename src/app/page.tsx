@@ -136,9 +136,6 @@ export default function Home() {
             <a href="https://comeup.com/dylankode" target="_blank" rel="noopener noreferrer">
               COMEUP
             </a>
-            <a href="/cv-clovis-dylan.pdf" target="_blank" rel="noopener noreferrer">
-              DOWNLOAD CV
-            </a>
           </div>
         </div>
       </footer>

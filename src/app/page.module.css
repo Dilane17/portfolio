@@ -849,6 +849,14 @@
   .footerInner {
     flex-direction: column;
     text-align: center;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .footerSocials {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 }
 
