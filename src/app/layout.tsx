@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     canonical: "https://www.dylan-dev.me",
     languages: { fr: "https://www.dylan-dev.me" },
   },
+  verification: {
+    google: "q6jzhPZgYgiakg-78gcsmzVLrbkAOOdmJaNGyQ-B71U",
+  },
   openGraph: {
     type: "website",
     locale: "fr_FR",
