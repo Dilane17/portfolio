@@ -303,6 +303,65 @@
       ],
       "nextSteps": "La suite la plus naturelle serait d'enrichir le portfolio de réalisations avec davantage de contenus dynamiques, de filtres et de preuves sociales éditorialisées.",
       "publicNote": "Le récit se concentre sur la mission, la structure du projet et les choix de présentation visibles publiquement, sans détailler d'informations sensibles."
+    },
+    {
+      "slug": "mayylo",
+      "title": "Mayylo",
+      "eyebrow": "MISSION RÉALISÉE CHEZ HUSTERLABS",
+      "company": "HustlerLabs",
+      "repoUrl": "",
+      "liveUrl": "https://client.mayylo.com",
+      "screenshots": [
+        {
+          "src": "/case-studies/mayylo/mayylo1.png",
+          "alt": "Capture de la landing page Mayylo",
+          "caption": "Landing page de conversion pour Mayylo."
+        }
+      ],
+      "tagline": "Landing page de conversion pour un service d'e-mails professionnels destiné aux PME d'Afrique francophone. Conçue pour maximiser les inscriptions à la liste d'attente.",
+      "summary": "Mayylo est un service d'e-mails professionnels conçu pour les PME d'Afrique francophone — une alternative simple à Gmail pour les entreprises qui veulent une adresse sérieuse, gérée en quelques minutes, payée en Mobile Money.",
+      "problem": "Une landing page de conversion pour un produit en phase de pré-lancement doit faire un travail difficile : convaincre sans pouvoir encore prouver.",
+      "solution": "J'ai réalisé la landing page de conversion complète : de la structure d'information à l'intégration finale, en passant par le formulaire de capture et l'optimisation pour la conversion.",
+      "techStack": [
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "Conversion"
+      ],
+      "ctaLabel": "Voir le case study",
+      "role": "Développeur front-end (solo)",
+      "timeline": "Mission freelance",
+      "team": "HustlerLabs",
+      "status": "En ligne — client.mayylo.com",
+      "deliverables": [],
+      "deliverableDescriptions": [],
+      "proofPoints": [],
+      "recruiterTakeaways": [],
+      "impact": [
+        { "label": "Livrable", "value": "Page de conversion complète déployée" },
+        { "label": "Formulaire", "value": "Capture et qualification fonctionnelles" },
+        { "label": "Adaptation", "value": "Mobile Money, WhatsApp, français" }
+      ],
+      "goals": [],
+      "challenges": [],
+      "process": [
+        {
+          "title": "Structurer le message avant de coder",
+          "description": "J'ai commencé par définir l'architecture de l'information : quelle section répond à quelle objection du visiteur ? Le hero répond à \"pourquoi changer ?\", la section problème/solution répond à \"en quoi c'est mieux ?\", les features répondent à \"est-ce fait pour moi ?\", le formulaire répond à \"comment je m'inscris ?\"."
+        },
+        {
+          "title": "Concevoir pour la conversion",
+          "description": "Chaque élément de la page a un rôle dans le tunnel : badge \"Bientôt disponible\" pour créer l'urgence, comparaison Gmail vs e-mail pro pour ancrer le problème, logos Mobile Money pour lever le frein du paiement, formulaire multi-étapes pour qualifier sans décourager."
+        },
+        {
+          "title": "Adapter au contexte africain",
+          "description": "La page est pensée pour un public d'Afrique francophone : support WhatsApp mis en avant (pas un chatbot), paiement par Wave/Orange Money/MTN MoMo/Free Money (pas de carte bancaire), copywriting en français direct et sans jargon technique."
+        }
+      ],
+      "technicalDecisions": [],
+      "outcomes": [],
+      "nextSteps": "",
+      "publicNote": ""
     }
   ],
   "skills": [

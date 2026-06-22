@@ -93,6 +93,26 @@ const repoInsights: Record<
       "Positionnement premium adapté à un studio audiovisuel.",
     ],
   },
+  "mayylo": {
+    heroLead:
+      "Mayylo est un service d'e-mails professionnels conçu pour les PME d'Afrique francophone — une alternative simple à Gmail pour les entreprises qui veulent une adresse sérieuse, gérée en quelques minutes, payée en Mobile Money. J'ai réalisé la landing page de conversion complète : de la structure d'information à l'intégration finale, en passant par le formulaire de capture et l'optimisation pour la conversion.",
+    context: [
+      "HustlerLabs construisait Mayylo pour répondre à un problème réel sur le marché africain : des milliers de PME utilisent encore des adresses Gmail pour leur communication professionnelle, ce qui nuit à leur crédibilité face aux clients et fournisseurs. Le service devait être simple, rapide à activer, et payable sans carte bancaire.",
+      "Avant le lancement officiel, il fallait une page capable de collecter des inscriptions à une liste d'attente — assez convaincante pour que des prospects s'inscrivent à un service qui n'existe pas encore."
+    ],
+    before: [
+      "Expliquer clairement le problème que Mayylo résout (adresse Gmail = manque de crédibilité professionnelle)",
+      "Différencier le service des alternatives existantes sur le marché africain (paiement Mobile Money, support WhatsApp en français, activation rapide sans compétence technique)",
+      "Inciter à l'inscription à une liste d'attente — une action à friction plus élevée qu'un simple achat"
+    ],
+    after: [
+      "Page de conversion complète livrée et déployée",
+      "Formulaire de capture fonctionnel avec qualification des inscrits (besoin principal, taille d'équipe, pays)",
+      "Architecture d'information orientée conversion de A à Z",
+      "Expérience adaptée au marché cible (Mobile Money, WhatsApp, français)"
+    ],
+    aside: []
+  },
 };
 
 export const dynamicParams = false;
