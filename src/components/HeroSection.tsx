@@ -49,7 +49,7 @@ export default function HeroSection() {
         <div className={styles.heroIndicators}>
           <div className={styles.heroIndicator}>
             <strong>8</strong>
-            <span>de projets réalisés</span> 
+            <span>projets réalisés</span> 
           </div>
           <div className={styles.indicatorSeparator}></div>
           <div className={styles.heroIndicator}>
