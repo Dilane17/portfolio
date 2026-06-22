@@ -14,6 +14,7 @@ export default function HeroSection() {
         </div>
 
         <h1 className={styles.heroTitle}>
+          <span className="sr-only">Clovis Ahouandjinou — Développeur Front-End Freelance React &amp; Next.js. </span>
           Je conçois des interfaces{" "}
           <span className={styles.heroTitleAccent}>nettes</span>, rapides et
           faites pour durer.

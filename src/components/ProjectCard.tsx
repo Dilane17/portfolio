@@ -33,7 +33,7 @@ export default function ProjectCard({
         {imageSrc ? (
           <Image
             src={imageSrc}
-            alt={`Aperçu du projet ${title}`}
+            alt={`${title} — projet réalisé par Clovis Ahouandjinou, développeur front-end freelance`}
             fill
             className={styles.projectImage}
             sizes="(max-width: 768px) 100vw, 50vw"

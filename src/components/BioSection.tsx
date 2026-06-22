@@ -22,7 +22,7 @@ export default function BioSection() {
           </h2>
           
           <p className={styles.paragraph}>
-            Je m&apos;appelle Clovis, développeur front-end basé en Afrique de l&apos;Ouest. Mon parcours mélange une formation académique en informatique et un apprentissage autodidacte poussé — Grafikart a posé une bonne partie de mes bases en développement web.
+            Je m&apos;appelle Clovis Ahouandjinou (Dylan pour ceux qui me connaissent en ligne), développeur front-end basé en Afrique de l&apos;Ouest. Mon parcours mélange une formation académique en informatique et un apprentissage autodidacte poussé — Grafikart a posé une bonne partie de mes bases en développement web.
           </p>
           
           <p className={styles.paragraph}>

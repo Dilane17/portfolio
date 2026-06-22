@@ -134,19 +134,20 @@ export async function generateMetadata(
   }
 
   return {
-    title: `${project.title} | Case Study`,
+    title: `${project.title} | Case Study — Clovis Ahouandjinou`,
     description: project.summary,
     alternates: {
       canonical: `https://www.dylan-dev.me/projects/${slug}`,
     },
     openGraph: {
-      title: `${project.title} | Case Study`,
+      title: `${project.title} | Case Study — Clovis Ahouandjinou`,
       description: project.summary,
+      url: `https://www.dylan-dev.me/projects/${slug}`,
       type: "website",
       locale: "fr_FR",
       images: [
         {
-          url: `/case-studies/${slug}/og.png`,
+          url: "/og-image.png",
           width: 1200,
           height: 630,
           alt: `${project.title} - Case Study | Clovis Ahouandjinou`,
@@ -155,9 +156,9 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Case Study`,
+      title: `${project.title} | Case Study — Clovis Ahouandjinou`,
       description: project.summary,
-      images: [`/case-studies/${slug}/og.png`],
+      images: ["/og-image.png"],
     },
   };
 }
@@ -175,8 +176,22 @@ export default async function ProjectCaseStudyPage({
   const heroShot = project.screenshots?.[0];
   const content = repoInsights[slug];
 
+  const caseStudyJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.summary,
+    url: `https://www.dylan-dev.me/projects/${slug}`,
+    author: { "@id": "https://www.dylan-dev.me/#person" },
+    inLanguage: "fr",
+  };
+
   return (
     <main className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+      />
       {/* Effet ambiant */}
       <div className={styles.ambientBlobs} aria-hidden="true">
         <div className={`${styles.blob} ${styles.blobGreen}`} />

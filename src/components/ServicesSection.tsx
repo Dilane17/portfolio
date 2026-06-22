@@ -44,7 +44,7 @@ export default function ServicesSection() {
       <div className="container">
         <div className="section-heading">
           <span className="eyebrow">Expertises</span>
-          <h2>Ce que je fais, et comment je l&apos;aborde.</h2>
+          <h2>Services de développement front-end freelance</h2>
           <p>
             Une intervention front-end calibrée pour des équipes produit qui
             veulent avancer vite, sans rien lâcher sur le niveau
