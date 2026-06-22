@@ -39,7 +39,15 @@ export default function Home() {
       <HeroSection />
 
       <ScrollReveal>
-        <TrustSection />
+        <BioSection />
+      </ScrollReveal>
+
+      {/* About */}
+      <ScrollReveal>
+        <AboutSection
+          approach={data.about.approach}
+          metrics={data.about.metrics}
+        />
       </ScrollReveal>
 
       {/* Projects */}
@@ -74,6 +82,10 @@ export default function Home() {
         </div>
       </section>
 
+      <ScrollReveal>
+        <TrustSection />
+      </ScrollReveal>
+
       {/* Services */}
       <ScrollReveal>
         <ServicesSection />
@@ -99,18 +111,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <ScrollReveal>
-        <AboutSection
-          approach={data.about.approach}
-          metrics={data.about.metrics}
-        />
-      </ScrollReveal>
-
-      <ScrollReveal>
-        <BioSection />
-      </ScrollReveal>
-
       <ScrollReveal>
         <FAQSection />
       </ScrollReveal>
@@ -123,15 +123,18 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <p className={styles.footerLeft}>
-            © 2026 Clovis Ahouandjinou. Typographies : Bricolage Grotesque & Be Vietnam Pro.
+            © {new Date().getFullYear()} Clovis Ahouandjinou. Ingénierie Frontend & Création de Produits SaaS.
           </p>
 
           <div className={styles.footerSocials}>
             <a href="https://github.com/Dilane17" target="_blank" rel="noopener noreferrer">
               GITHUB
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
-              LINKEDIN
+            <a href="https://x.com/dylankodee" target="_blank" rel="noopener noreferrer">
+              X (TWITTER)
+            </a>
+            <a href="https://comeup.com/dylankode" target="_blank" rel="noopener noreferrer">
+              COMEUP
             </a>
             <a href="/cv-clovis-dylan.pdf" target="_blank" rel="noopener noreferrer">
               DOWNLOAD CV

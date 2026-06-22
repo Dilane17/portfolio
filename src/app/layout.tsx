@@ -44,10 +44,6 @@ export const metadata: Metadata = {
     creator: "@dylankodee",
     images: ["/og-image.png"],
   },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
 };
 
 export default function RootLayout({

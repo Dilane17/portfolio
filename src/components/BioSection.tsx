@@ -2,7 +2,7 @@ import styles from "./bio-section.module.css";
 
 export default function BioSection() {
   return (
-    <section id="bio" className="section container">
+    <section id="about" className="section container">
       <div className={styles.bioGrid}>
         
         {/* Avatar Zone (~35%) */}

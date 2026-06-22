@@ -7,7 +7,7 @@ interface AboutProps {
 
 export default function AboutSection({ approach, metrics }: AboutProps) {
   return (
-    <section id="about" className="section container">
+    <section id="approach" className="section container">
       <div className="section-heading">
         <span className="eyebrow">APPROCHE PRODUIT</span>
         <h2>Une exigence produit, pas juste visuelle</h2>
