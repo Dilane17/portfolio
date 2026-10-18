@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { portfolioData } from "@/lib/portfolio";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -145,6 +146,9 @@ export default function Home() {
           </p>
 
           <div className={styles.footerSocials}>
+            <Link href="/blog">
+              BLOG
+            </Link>
             <a href="https://github.com/Dilane17" target="_blank" rel="noopener noreferrer">
               GITHUB
             </a>
