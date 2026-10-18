@@ -133,32 +133,34 @@ export async function generateMetadata(
     };
   }
 
+  const title = project.seoTitle;
+  const description = project.seoDescription;
+  const ogImage = project.screenshots?.[0]?.src ?? "/og-image.png";
+
   return {
-    title: `${project.title} | Case Study — Clovis Ahouandjinou`,
-    description: project.summary,
+    title,
+    description,
     alternates: {
       canonical: `https://www.dylan-dev.me/projects/${slug}`,
     },
     openGraph: {
-      title: `${project.title} | Case Study — Clovis Ahouandjinou`,
-      description: project.summary,
+      title,
+      description,
       url: `https://www.dylan-dev.me/projects/${slug}`,
-      type: "website",
+      type: "article",
       locale: "fr_FR",
       images: [
         {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
+          url: ogImage,
           alt: `${project.title} - Case Study | Clovis Ahouandjinou`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} | Case Study — Clovis Ahouandjinou`,
-      description: project.summary,
-      images: ["/og-image.png"],
+      title,
+      description,
+      images: [ogImage],
     },
   };
 }
@@ -176,14 +178,32 @@ export default async function ProjectCaseStudyPage({
   const heroShot = project.screenshots?.[0];
   const content = repoInsights[slug];
 
+  const pageUrl = `https://www.dylan-dev.me/projects/${slug}`;
   const caseStudyJsonLd = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.title,
-    description: project.summary,
-    url: `https://www.dylan-dev.me/projects/${slug}`,
-    author: { "@id": "https://www.dylan-dev.me/#person" },
-    inLanguage: "fr",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "@id": `${pageUrl}#project`,
+        name: project.title,
+        headline: project.seoTitle,
+        description: project.seoDescription,
+        url: pageUrl,
+        image: heroShot ? `https://www.dylan-dev.me${heroShot.src}` : undefined,
+        keywords: project.techStack.join(", "),
+        dateModified: project.lastModified,
+        author: { "@id": "https://www.dylan-dev.me/#person" },
+        inLanguage: "fr",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: "https://www.dylan-dev.me" },
+          { "@type": "ListItem", position: 2, name: "Projets", item: "https://www.dylan-dev.me/#projects" },
+          { "@type": "ListItem", position: 3, name: project.title, item: pageUrl },
+        ],
+      },
+    ],
   };
 
   return (

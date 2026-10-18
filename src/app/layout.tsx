@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import ReadingProgress from "@/components/ReadingProgress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dylan-dev.me"),
-  title: "Clovis Ahouandjinou | Développeur Frontend React Next.js Freelance",
+  title: "Clovis Ahouandjinou | Développeur React & Next.js Freelance",
   description:
-    "Portfolio de Clovis Ahouandjinou, développeur frontend freelance basé à Cotonou (Bénin). Interfaces React et Next.js performantes pour startups et équipes produit SaaS.",
+    "Développeur front-end freelance à Cotonou. Sites, landing pages et dashboards React & Next.js pour startups et PME d'Afrique et d'Europe francophone.",
   keywords: [
     "développeur frontend React Next.js freelance",
     "développeur frontend Cotonou Bénin Afrique",
@@ -28,7 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.dylan-dev.me",
-    title: "Clovis Ahouandjinou | Développeur Frontend React Next.js Freelance",
+    title: "Clovis Ahouandjinou | Développeur React & Next.js Freelance",
     description:
       "Clovis Ahouandjinou — Développeur front-end freelance React & Next.js. Interfaces performantes pour produits SaaS exigeants, de la landing page au dashboard complet.",
     siteName: "Clovis Ahouandjinou Portfolio",
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Clovis Ahouandjinou | Développeur Frontend React Next.js Freelance",
+    title: "Clovis Ahouandjinou | Développeur React & Next.js Freelance",
     description:
       "Interfaces React & Next.js solides pour produits SaaS. Freelance basé à Cotonou, Bénin.",
     creator: "@dylankodee",
@@ -113,6 +115,8 @@ export default function RootLayout({
         />
         <ReadingProgress />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
