@@ -1,3 +1,5 @@
+import Link from "next/link";
+import { landingPages } from "@/lib/landingPages";
 import styles from "./services-section.module.css";
 
 interface ServiceCard {
@@ -5,7 +7,7 @@ interface ServiceCard {
   description: string;
 }
 
-const services: ServiceCard[] = [
+export const services: ServiceCard[] = [
   {
     title: "Site Vitrine Premium",
     description:
@@ -60,6 +62,17 @@ export default function ServicesSection() {
             </div>
           ))}
         </div>
+
+        <p style={{ marginTop: "32px", textAlign: "center" }}>
+          {landingPages.map((page, i) => (
+            <span key={page.slug}>
+              {i > 0 && " · "}
+              <Link href={`/services/${page.slug}`} className="text-link">
+                {page.eyebrow}
+              </Link>
+            </span>
+          ))}
+        </p>
       </div>
     </section>
   );
