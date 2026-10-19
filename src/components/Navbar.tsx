@@ -49,6 +49,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
             <li><Link href={skillsHref}>Compétences</Link></li>
             <li><Link href={aboutHref}>À propos</Link></li>
             <li><Link href={faqHref}>FAQ</Link></li>
+            <li><Link href="/blog">Blog</Link></li>
             <li><Link href={contactHref}>Contact</Link></li>
           </ul>
 
@@ -86,6 +87,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
           <li><Link href={skillsHref} onClick={closeMenu}>Compétences</Link></li>
           <li><Link href={aboutHref} onClick={closeMenu}>À propos</Link></li>
           <li><Link href={faqHref} onClick={closeMenu}>FAQ</Link></li>
+          <li><Link href="/blog" onClick={closeMenu}>Blog</Link></li>
           <li><Link href={contactHref} onClick={closeMenu}>Contact</Link></li>
         </ul>
 

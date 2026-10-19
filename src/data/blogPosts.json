@@ -213,6 +213,10 @@
       {
         "label": "Voir mes services",
         "href": "/services/developpeur-nextjs-freelance-europe-afrique"
+      },
+      {
+        "label": "Lire : landing page de conversion",
+        "href": "/blog/landing-page-conversion-nextjs-structure-performance"
       }
     ]
   },
@@ -442,6 +446,10 @@
       {
         "label": "Étude de cas Mayylo",
         "href": "/projects/mayylo"
+      },
+      {
+        "label": "Lire : SEO technique avec Next.js",
+        "href": "/blog/seo-technique-nextjs-metadata-sitemap-json-ld"
       }
     ]
   }

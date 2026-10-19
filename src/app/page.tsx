@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { jsonLdString } from "@/lib/jsonLd";
 import { portfolioData } from "@/lib/portfolio";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
@@ -40,7 +41,7 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
+          __html: jsonLdString({
             "@context": "https://schema.org",
             "@type": "FAQPage",
             mainEntity: faqItems.map(item => ({
