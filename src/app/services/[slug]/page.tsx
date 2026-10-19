@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import { services } from "@/components/ServicesSection";
 import { faqItems, getProjectBySlug } from "@/lib/portfolio";
 import { getLandingPage, landingPages } from "@/lib/landingPages";
+import { jsonLdString } from "@/lib/jsonLd";
 import styles from "./landing.module.css";
 
 type LandingPageProps = {
@@ -48,20 +49,11 @@ export async function generateMetadata(
       url,
       type: "website",
       locale: "fr_FR",
-      images: [
-        {
-          url: "/og-image.png",
-          width: 1200,
-          height: 630,
-          alt: page.h1,
-        },
-      ],
     },
     twitter: {
       card: "summary_large_image",
       title: page.seoTitle,
       description: page.seoDescription,
-      images: ["/og-image.png"],
     },
   };
 }
@@ -124,7 +116,7 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
     <main className={styles.page}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(jsonLd) }}
       />
       <Navbar isProjectPage />
 

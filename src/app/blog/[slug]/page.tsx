@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import { blogPosts, getBlogPost } from "@/lib/blog";
+import { jsonLdString } from "@/lib/jsonLd";
 import styles from "../blog.module.css";
 
 type BlogPostProps = {
@@ -42,13 +43,11 @@ export async function generateMetadata(
       publishedTime: post.datePublished,
       modifiedTime: post.dateModified,
       authors: ["Clovis Ahouandjinou"],
-      images: [{ url: "/og-image.png", width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: post.seoTitle,
       description: post.description,
-      images: ["/og-image.png"],
     },
   };
 }
@@ -72,7 +71,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
         description: post.description,
         url,
         mainEntityOfPage: url,
-        image: `${SITE_URL}/og-image.png`,
+        image: `${url}/opengraph-image`,
         datePublished: post.datePublished,
         dateModified: post.dateModified,
         keywords: post.tags.join(", "),
@@ -96,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          __html: jsonLdString(jsonLd),
         }}
       />
       <Navbar isProjectPage />
@@ -146,12 +145,16 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
       </article>
 
       <div className={styles.cta}>
-        <Link
-          href="/services/developpeur-nextjs-freelance-europe-afrique"
-          className="btn btn-green"
-        >
-          Travaillons ensemble
-        </Link>{" "}
+        {post.links.map((link, i) => (
+          <span key={link.href}>
+            <Link
+              href={link.href}
+              className={i === 0 ? "btn btn-green" : "btn btn-ghost"}
+            >
+              {link.label}
+            </Link>{" "}
+          </span>
+        ))}
         <Link href="/blog" className="btn btn-ghost">
           Tous les articles
         </Link>

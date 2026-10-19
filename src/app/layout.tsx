@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { jsonLdString } from "@/lib/jsonLd";
 import ReadingProgress from "@/components/ReadingProgress";
 
 export const metadata: Metadata = {
@@ -64,7 +65,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+            __html: jsonLdString({
               "@context": "https://schema.org",
               "@graph": [
                 {
@@ -106,7 +107,7 @@ export default function RootLayout({
                 {
                   "@type": "ProfilePage",
                   dateCreated: "2024-01-01",
-                  dateModified: "2026-06-22",
+                  dateModified: "2026-10-19",
                   mainEntity: { "@id": "https://www.dylan-dev.me/#person" }
                 }
               ]

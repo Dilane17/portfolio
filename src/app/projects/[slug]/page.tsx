@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import ScrollReveal from "@/components/ScrollReveal";
 import { getProjectBySlug, getProjectSlugs } from "@/lib/portfolio";
+import { jsonLdString } from "@/lib/jsonLd";
 import styles from "./case-study.module.css";
 
 type ProjectPageProps = {
@@ -210,7 +211,7 @@ export default async function ProjectCaseStudyPage({
     <main className={styles.page}>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudyJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(caseStudyJsonLd) }}
       />
       {/* Effet ambiant */}
       <div className={styles.ambientBlobs} aria-hidden="true">
@@ -246,7 +247,8 @@ export default async function ProjectCaseStudyPage({
                 width={1200}
                 height={750}
                 className={styles.heroImage}
-                priority
+                loading="eager"
+                fetchPriority="high"
               />
             </div>
           </ScrollReveal>

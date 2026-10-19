@@ -12,8 +12,12 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  alternates: { canonical: url },
+  alternates: {
+    canonical: url,
+    types: { "application/rss+xml": "https://www.dylan-dev.me/blog/feed.xml" },
+  },
   openGraph: { title, description, url, type: "website", locale: "fr_FR" },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function BlogIndexPage() {
