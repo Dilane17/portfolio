@@ -146,12 +146,16 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
       </article>
 
       <div className={styles.cta}>
-        <Link
-          href="/services/developpeur-nextjs-freelance-europe-afrique"
-          className="btn btn-green"
-        >
-          Travaillons ensemble
-        </Link>{" "}
+        {post.links.map((link, i) => (
+          <span key={link.href}>
+            <Link
+              href={link.href}
+              className={i === 0 ? "btn btn-green" : "btn btn-ghost"}
+            >
+              {link.label}
+            </Link>{" "}
+          </span>
+        ))}
         <Link href="/blog" className="btn btn-ghost">
           Tous les articles
         </Link>
