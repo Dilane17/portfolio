@@ -111,7 +111,7 @@ function estimateReadingTime(blocks: BlogBlock[]) {
 function loadPosts(): BlogPost[] {
   return fs
     .readdirSync(CONTENT_DIR)
-    .filter((file) => file.endsWith(".md"))
+    .filter((file) => file.endsWith(".md") && file.toLowerCase() !== "readme.md")
     .map((file) => {
       const { data, links, body } = parseFrontmatter(
         fs.readFileSync(path.join(CONTENT_DIR, file), "utf8"),
