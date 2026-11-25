@@ -38,7 +38,7 @@ export default function Navbar({ isProjectPage = false }: NavbarProps) {
             <span className={styles.brandBadge}>CD</span>
             <span>
               <span className={styles.brandName}>Clovis Ahouandjinou</span>
-              <span className={styles.brandRole}>Développeur Front-End</span>
+              <span className={styles.brandRole}>Développeur Full Stack</span>
             </span>
           </Link>
 
