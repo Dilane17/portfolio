@@ -76,7 +76,10 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
   const pageFaq = faqItems.filter((item) =>
     page.faqQuestions.includes(item.question),
   );
-  const relatedPage = getLandingPage(page.related);
+  const relatedPages = page.related
+    .map((relatedSlug) => getLandingPage(relatedSlug))
+    .filter((related) => related !== undefined);
+  const allFaq = [...(page.faq ?? []), ...pageFaq];
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -99,9 +102,22 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
         description: page.seoDescription,
         serviceType: page.eyebrow,
         provider: { "@id": `${SITE_URL}/#person` },
-        areaServed: ["Europe", "Afrique"],
+        areaServed: page.areaServed ?? ["Europe", "Afrique"],
         availableLanguage: "fr",
       },
+      ...(allFaq.length > 0
+        ? [
+            {
+              "@type": "FAQPage",
+              "@id": `${url}#faq`,
+              mainEntity: allFaq.map((item) => ({
+                "@type": "Question",
+                name: item.question,
+                acceptedAnswer: { "@type": "Answer", text: item.answer },
+              })),
+            },
+          ]
+        : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -133,6 +149,17 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
           </Link>
         </div>
       </header>
+
+      {page.sections?.map((section) => (
+        <section key={section.title} className={styles.block}>
+          <h2>{section.title}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p key={paragraph} className={styles.lead}>
+              {paragraph}
+            </p>
+          ))}
+        </section>
+      ))}
 
       <section className={styles.block}>
         <h2>Pourquoi travailler avec moi</h2>
@@ -185,7 +212,7 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
 
       <section className={`${styles.block} ${styles.faq}`}>
         <h2>Questions fréquentes</h2>
-        {pageFaq.map((item) => (
+        {allFaq.map((item) => (
           <details key={item.question}>
             <summary>{item.question}</summary>
             <p>{item.answer}</p>
@@ -200,12 +227,17 @@ export default async function LandingPageRoute({ params }: LandingPageProps) {
         <Link href="/#contact" className="btn btn-green">
           {page.ctaLabel}
         </Link>
-        {relatedPage && (
+        {relatedPages.length > 0 && (
           <p className={styles.related}>
             À lire aussi :{" "}
-            <Link href={`/services/${relatedPage.slug}`} className="text-link">
-              {relatedPage.eyebrow}
-            </Link>
+            {relatedPages.map((related, i) => (
+              <span key={related.slug}>
+                {i > 0 && " · "}
+                <Link href={`/services/${related.slug}`} className="text-link">
+                  {related.eyebrow}
+                </Link>
+              </span>
+            ))}
           </p>
         )}
       </section>
