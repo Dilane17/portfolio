@@ -28,7 +28,7 @@ export const landingPages: LandingPage[] = [
       "Clovis Ahouandjinou, développeur Next.js et React freelance basé à Cotonou. Interfaces SaaS et fintech en remote pour l'Europe francophone et l'Afrique.",
     eyebrow: "Freelance React & Next.js",
     h1: "Développeur Next.js freelance, en remote pour l'Europe francophone et l'Afrique",
-    lead: "Je suis Clovis Ahouandjinou, développeur front-end freelance basé à Cotonou (Bénin). Je transforme une idée, une maquette ou un produit existant en interface React et Next.js solide, claire à utiliser et propre à maintenir, pour des startups, des équipes produit SaaS et des PME en Europe francophone comme en Afrique.",
+    lead: "Je suis Clovis Ahouandjinou, développeur full stack freelance basé à Cotonou (Bénin). Je transforme une idée, une maquette ou un produit existant en application web ou mobile solide (Next.js, NestJS, PostgreSQL, Flutter), claire à utiliser et propre à maintenir, pour des startups, des équipes produit SaaS et des PME en Europe francophone comme en Afrique.",
     lastModified: "2026-10-18",
     highlights: [
       {
@@ -53,7 +53,7 @@ export const landingPages: LandingPage[] = [
       "Développement Full-Stack",
       "Site Vitrine Premium",
       "Maintenance & Évolution",
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
     ],
     projectSlugs: ["asmi-transfert", "atelier-bossart", "ares-drive", "mayylo"],
     faqQuestions: [
@@ -101,7 +101,7 @@ export const landingPages: LandingPage[] = [
       "Site Vitrine Premium",
       "Application Web & SaaS",
       "Maintenance & Évolution",
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
     ],
     projectSlugs: ["mayylo", "asmi-transfert", "atelier-bossart"],
     faqQuestions: [
@@ -149,7 +149,7 @@ export const landingPages: LandingPage[] = [
       "Site Vitrine Premium",
       "Application Web & SaaS",
       "Maintenance & Évolution",
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
     ],
     projectSlugs: ["mayylo", "atelier-bossart", "asmi-transfert"],
     faqQuestions: [
@@ -224,7 +224,7 @@ export const landingPages: LandingPage[] = [
       "Application Web & SaaS",
       "Développement Full-Stack",
       "Maintenance & Évolution",
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
     ],
     projectSlugs: ["mayylo", "ares-drive", "asmi-transfert"],
     faqQuestions: [
@@ -271,7 +271,7 @@ export const landingPages: LandingPage[] = [
     slug: "refonte-optimisation-site-web-nextjs",
     seoTitle: "Refonte de site web et optimisation des performances | Next.js",
     seoDescription:
-      "Votre site est lent, daté ou mal référencé ? Audit, refonte et optimisation des performances (Core Web Vitals) avec Next.js par un développeur front-end freelance.",
+      "Votre site est lent, daté ou mal référencé ? Audit, refonte et optimisation des performances (Core Web Vitals) avec Next.js par un développeur full stack freelance.",
     eyebrow: "Refonte & optimisation de site web",
     h1: "Refonte de site web et optimisation des performances avec Next.js",
     lead: "Un site lent, qui s'affiche mal sur mobile ou qui n'apparaît pas sur Google fait perdre des clients. Je réalise l'audit de votre site existant, puis sa refonte ou son optimisation : performances, accessibilité, SEO technique et expérience mobile.",
@@ -295,7 +295,7 @@ export const landingPages: LandingPage[] = [
       },
     ],
     serviceTitles: [
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
       "Maintenance & Évolution",
       "Site Vitrine Premium",
       "Application Web & SaaS",
@@ -329,7 +329,7 @@ export const landingPages: LandingPage[] = [
       {
         title: "Mon approche : audit, priorisation, correction",
         paragraphs: [
-          "Je mesure d'abord l'état de votre site, puis je classe les problèmes par impact. Vous choisissez ce qui est traité : corrections ciblées, refonte du front-end ou migration complète vers Next.js.",
+          "Je mesure d'abord l'état de votre site, puis je classe les problèmes par impact. Vous choisissez ce qui est traité : corrections ciblées, refonte de l'interface ou migration complète vers Next.js.",
         ],
       },
     ],
@@ -633,7 +633,7 @@ export const landingPages: LandingPage[] = [
     ],
     serviceTitles: [
       "Maintenance & Évolution",
-      "Audit & Conseil Frontend",
+      "Audit & Conseil Technique",
       "Développement Full-Stack",
     ],
     projectSlugs: ["mayylo", "ares-drive"],

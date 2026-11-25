@@ -42,10 +42,10 @@ export const services: ServiceCard[] = [
       "Votre produit est en ligne mais évolue ? Je prends en charge la maintenance, les corrections de bugs, les mises à jour techniques et l'ajout de nouvelles fonctionnalités sur des bases existantes.",
   },
   {
-    title: "Audit & Conseil Frontend",
+    title: "Audit & Conseil Technique",
     pageSlug: "refonte-optimisation-site-web-nextjs",
     description:
-      "Votre interface est lente, incohérente ou difficile à maintenir ? Je réalise un audit complet de votre codebase et de votre UX, avec un rapport de recommandations priorisées et actionnables.",
+      "Votre site ou votre application est lent, incohérent ou difficile à maintenir ? Je réalise un audit complet de votre code (interface, API, base de données) et de votre UX, avec un rapport de recommandations priorisées et actionnables.",
   },
 ];
 
