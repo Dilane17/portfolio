@@ -10,10 +10,10 @@ export default function AboutSection({ approach, metrics }: AboutProps) {
     <section id="approach" className="section container">
       <div className="section-heading">
         <span className="eyebrow">APPROCHE PRODUIT</span>
-        <h2>Une exigence produit, pas juste visuelle</h2>
+        <h2>Une exigence produit, de l'interface à la base de données</h2>
         <p>
-          J&apos;aime les interfaces qui ont du niveau, mais surtout une logique:
-          hiérarchie claire, décisions assumées et détails utiles au service du produit.
+          J&apos;aime les produits qui ont du niveau, côté interface comme côté serveur, mais surtout une logique:
+          architecture claire, décisions assumées et détails utiles au service du produit.
         </p>
       </div>
 
@@ -24,7 +24,7 @@ export default function AboutSection({ approach, metrics }: AboutProps) {
           <p className={styles.mindsetCardText}>
             Je pars du besoin utilisateur, j&apos;identifie les zones de friction,
             puis je construis un parcours simple, crédible et agréable à utiliser.
-            Mon objectif n&apos;est pas juste de livrer une belle UI, mais un produit
+            Mon objectif n&apos;est pas juste de livrer une belle UI, mais un produit complet (interface, API, données)
             plus clair à maintenir, plus rapide à faire évoluer et plus fort côté perception.
           </p>
           <div className={styles.approachList}>

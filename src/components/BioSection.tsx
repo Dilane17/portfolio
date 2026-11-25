@@ -22,11 +22,11 @@ export default function BioSection() {
           </h2>
           
           <p className={styles.paragraph}>
-            Je m&apos;appelle Clovis Ahouandjinou (Dylan pour ceux qui me connaissent en ligne), développeur front-end basé en Afrique de l&apos;Ouest. Mon parcours mélange une formation académique en informatique et un apprentissage autodidacte poussé — Grafikart a posé une bonne partie de mes bases en développement web.
+            Je m&apos;appelle Clovis Ahouandjinou (Dylan pour ceux qui me connaissent en ligne), développeur full stack web et mobile basé en Afrique de l&apos;Ouest. Mon parcours mélange une formation académique en informatique et un apprentissage autodidacte poussé — Grafikart a posé une bonne partie de mes bases en développement web.
           </p>
           
           <p className={styles.paragraph}>
-            Ce qui me motive, c&apos;est le point de rencontre entre deux choses : des interfaces qui résolvent de vrais problèmes business, et une expérience utilisateur soignée jusqu&apos;au moindre détail. Un produit qui marche mais qui est moche ne suffit pas. Un produit beau mais qui ne convertit pas non plus.
+            Ce qui me motive, c&apos;est le point de rencontre entre deux choses : des produits complets, de la base de données à l&apos;écran, qui résolvent de vrais problèmes business, et une expérience utilisateur soignée jusqu&apos;au moindre détail. Un produit qui marche mais qui est moche ne suffit pas. Un produit beau mais qui ne convertit pas non plus.
           </p>
 
           <p className={styles.paragraph}>

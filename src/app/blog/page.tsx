@@ -7,7 +7,7 @@ import styles from "./blog.module.css";
 const url = "https://www.dylan-dev.me/blog";
 const title = "Blog développement web : Next.js, React et SEO";
 const description =
-  "Articles techniques en français sur Next.js, React et le SEO technique, par Clovis Ahouandjinou, développeur front-end freelance.";
+  "Articles techniques en français sur Next.js, React et le SEO technique, par Clovis Ahouandjinou, développeur full stack freelance.";
 
 export const metadata: Metadata = {
   title,

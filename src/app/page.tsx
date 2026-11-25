@@ -143,7 +143,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.footerInner}>
           <p className={styles.footerLeft}>
-            © {new Date().getFullYear()} Clovis Ahouandjinou. Ingénierie Frontend & Création de Produits SaaS.
+            © {new Date().getFullYear()} Clovis Ahouandjinou. Développement Full Stack Web & Mobile et Création de Produits SaaS.
           </p>
 
           <div className={styles.footerSocials}>

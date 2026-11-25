@@ -15,8 +15,8 @@ export default function HeroSection() {
 
         <h1 className={styles.heroTitle}>
           <span className="sr-only">Clovis Ahouandjinou — Développeur full stack web et mobile freelance à Cotonou : applications Next.js, API NestJS, applications Flutter, sites web et SaaS pour l'Afrique et l'Europe. </span>
-          Je conçois des interfaces{" "}
-          <span className={styles.heroTitleAccent}>nettes</span>, rapides et
+          Je conçois des applications web et mobiles{" "}
+          <span className={styles.heroTitleAccent}>solides</span>, rapides et
           faites pour durer.
         </h1>
 

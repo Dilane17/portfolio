@@ -10,7 +10,7 @@ const stats = [
 
 const reasons = [
   "Une approche orientée produit, pas seulement esthétique.",
-  "Des interfaces pensées pour être maintenables après livraison.",
+  "Un code full stack pensé pour être maintenable après livraison.",
   "Un cadrage clair avant de partir en développement.",
 ];
 
@@ -26,8 +26,8 @@ export default function TrustSection() {
           </h2>
           <p>
             J&apos;interviens pour transformer une idée, une maquette ou un
-            produit existant en interface solide : claire à utiliser, propre à
-            maintenir et crédible face à vos clients.
+            produit existant en application web ou mobile complète : claire à
+            utiliser, propre à maintenir et crédible face à vos clients.
           </p>
           <div className={styles.trustActions}>
             <Link href="#contact" className="btn btn-green">

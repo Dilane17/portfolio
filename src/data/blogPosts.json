@@ -40,7 +40,7 @@
           "  metadataBase: new URL(\"https://www.exemple.fr\"),",
           "  title: \"Votre Nom | Développeur React & Next.js Freelance\",",
           "  description:",
-          "    \"Développeur front-end freelance. Sites, landing pages et dashboards React & Next.js pour startups et PME.\",",
+          "    \"Développeur full stack freelance. Sites, landing pages et applications Next.js pour startups et PME.\",",
           "  alternates: { canonical: \"https://www.exemple.fr\" },",
           "  openGraph: {",
           "    type: \"website\",",
@@ -206,7 +206,7 @@
       },
       {
         "type": "p",
-        "text": "Si vous souhaitez un site Next.js avec un SEO technique solide dès le départ, découvrez mes services de développement front-end freelance ou écrivez-moi pour en discuter."
+        "text": "Si vous souhaitez un site Next.js avec un SEO technique solide dès le départ, découvrez mes services de développement web et mobile freelance ou écrivez-moi pour en discuter."
       }
     ],
     "links": [
