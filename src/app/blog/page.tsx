@@ -5,9 +5,9 @@ import { blogPosts } from "@/lib/blog";
 import styles from "./blog.module.css";
 
 const url = "https://www.dylan-dev.me/blog";
-const title = "Blog développement web : Next.js, React et SEO";
+const title = "Blog création de site web et d'application : conseils pour votre projet";
 const description =
-  "Articles techniques en français sur Next.js, React et le SEO technique, par Clovis Ahouandjinou, développeur full stack freelance.";
+  "Conseils en français pour réussir votre site web ou votre application : prix, choix du prestataire, type de projet, SEO. Par Clovis Ahouandjinou, développeur full stack freelance.";
 
 export const metadata: Metadata = {
   title,
@@ -28,9 +28,9 @@ export default function BlogIndexPage() {
         <span className="eyebrow" style={{ textAlign: "left" }}>
           Blog
         </span>
-        <h1 className={styles.title}>Next.js, React et SEO technique</h1>
+        <h1 className={styles.title}>Conseils pour réussir votre site web ou votre application</h1>
         <p className={styles.meta}>
-          Des articles pratiques en français, tirés de mes projets.
+          Des articles pratiques et sans jargon, tirés de mes projets. Les articles techniques pour développeurs sont signalés par leurs étiquettes.
         </p>
       </header>
       <div className={styles.list}>

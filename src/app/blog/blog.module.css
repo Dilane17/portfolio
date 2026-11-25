@@ -110,3 +110,11 @@
   color: var(--ink-mid);
   font-size: 14px;
 }
+
+.article p code,
+.article li code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--green-soft);
+  font-size: 0.92em;
+}
