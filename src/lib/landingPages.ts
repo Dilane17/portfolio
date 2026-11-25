@@ -195,7 +195,7 @@ export const landingPages: LandingPage[] = [
   },
   {
     slug: "creation-application-web-saas-sur-mesure",
-    seoTitle: "Création d'application web et SaaS sur mesure | Freelance",
+    seoTitle: "Création d'application web, SaaS et MVP sur mesure | Freelance",
     seoDescription:
       "Créer une application web, un SaaS ou un dashboard sur mesure avec React et Next.js. De l'idée au MVP, un développeur freelance vous accompagne de bout en bout.",
     eyebrow: "Application web & SaaS sur mesure",
@@ -468,6 +468,207 @@ export const landingPages: LandingPage[] = [
       "developpeur-flutter-application-mobile-freelance",
       "developpeur-nextjs-freelance-europe-afrique",
     ],
+  },
+  {
+    slug: "developpeur-nestjs-api-backend-freelance",
+    seoTitle: "Développeur NestJS freelance | API REST et back-end PostgreSQL",
+    seoDescription:
+      "Développeur NestJS freelance : API REST sécurisée, back-end PostgreSQL avec Prisma, déploiement Docker. Pour startups et entreprises en Afrique et en Europe.",
+    eyebrow: "API & back-end NestJS",
+    h1: "Développeur NestJS freelance : API REST et back-end PostgreSQL sur mesure",
+    lead: "Votre application web ou mobile a besoin d'un back-end fiable ? Je conçois et développe vos API REST avec NestJS et TypeScript, adossées à une base PostgreSQL via Prisma, et je les prépare pour un déploiement avec Docker. Je travaille en remote depuis Cotonou pour l'Afrique et l'Europe.",
+    lastModified: "2026-11-25",
+    highlights: [
+      {
+        title: "Une API claire et documentée",
+        text: "Routes REST cohérentes, validation des données et structure modulaire propre à NestJS, pour que d'autres développeurs puissent reprendre le projet facilement.",
+      },
+      {
+        title: "Une base de données bien pensée",
+        text: "Modélisation PostgreSQL, migrations et accès aux données avec Prisma, pensés pour que votre produit puisse grandir sans tout réécrire.",
+      },
+      {
+        title: "Prêt pour le déploiement",
+        text: "Environnement conteneurisé avec Docker pour que l'application fonctionne de la même façon en développement et en production.",
+      },
+      {
+        title: "Branché à votre interface",
+        text: "L'API alimente aussi bien une application web Next.js qu'une application mobile Flutter, avec un seul interlocuteur pour l'ensemble.",
+      },
+    ],
+    serviceTitles: [
+      "Développement Full-Stack",
+      "Application Web & SaaS",
+      "Application Mobile",
+      "Maintenance & Évolution",
+    ],
+    projectSlugs: ["ares-drive", "mayylo"],
+    faqQuestions: [
+      "Combien coûte un projet ?",
+      "Est-ce que vous travaillez sur des projets déjà existants ?",
+      "Travaillez-vous uniquement en remote ?",
+    ],
+    faq: [
+      {
+        question: "Qu'est-ce qu'une API REST et pourquoi en ai-je besoin ?",
+        answer:
+          "Une API est le point d'échange entre votre base de données et vos interfaces (site, application mobile). Elle permet à plusieurs applications d'utiliser les mêmes données de façon sécurisée et cohérente.",
+      },
+      {
+        question: "Pourquoi NestJS pour le back-end ?",
+        answer:
+          "NestJS impose une organisation claire du code en modules, avec TypeScript. Cela facilite la maintenance, les tests et l'arrivée de nouveaux développeurs sur le projet.",
+      },
+    ],
+    sections: [
+      {
+        title: "Quand faire appel à un développeur back-end NestJS ?",
+        paragraphs: [
+          "Vous en avez besoin dès que votre produit gère des comptes utilisateurs, des données métier ou des paiements : l'interface seule ne suffit plus. Je peux construire le back-end d'un nouveau projet ou reprendre et fiabiliser une API existante.",
+        ],
+      },
+    ],
+    ctaLabel: "Demander un devis",
+    related: [
+      "developpeur-fullstack-freelance-nestjs-postgresql",
+      "creation-application-web-saas-sur-mesure",
+      "maintenance-deploiement-application-docker",
+    ],
+    areaServed: ["Europe", "Afrique"],
+  },
+  {
+    slug: "application-de-gestion-sur-mesure",
+    seoTitle: "Application de gestion sur mesure | Stock, facturation, réservation",
+    seoDescription:
+      "Une application de gestion sur mesure pour votre entreprise : stock, facturation, réservations ou tableau de bord. Développement web et mobile, devis gratuit.",
+    eyebrow: "Application de gestion sur mesure",
+    h1: "Application de gestion sur mesure pour votre entreprise",
+    lead: "Vous gérez encore votre stock, vos factures ou vos réservations sur papier ou dans des tableurs ? Je développe une application de gestion adaptée à votre façon de travailler, accessible depuis un navigateur ou un téléphone, avec un tableau de bord clair pour piloter votre activité.",
+    lastModified: "2026-11-25",
+    highlights: [
+      {
+        title: "Conçue pour votre façon de travailler",
+        text: "Pas de logiciel générique à contourner : on part de vos process réels et on ne développe que ce qui vous est utile.",
+      },
+      {
+        title: "Un tableau de bord lisible",
+        text: "Les informations importantes sont visibles d'un coup d'œil, avec des filtres et des vues pensés pour un usage quotidien.",
+      },
+      {
+        title: "Web et mobile",
+        text: "Application web responsive, ou application mobile Flutter si votre équipe travaille surtout sur le terrain.",
+      },
+      {
+        title: "Évolutive après la livraison",
+        text: "Vous pouvez commencer par l'essentiel (une première version), puis ajouter des modules au fil des besoins.",
+      },
+    ],
+    serviceTitles: [
+      "Application Web & SaaS",
+      "Développement Full-Stack",
+      "Application Mobile",
+      "Maintenance & Évolution",
+    ],
+    projectSlugs: ["ares-drive", "mayylo"],
+    faqQuestions: [
+      "Combien coûte un projet ?",
+      "Combien de temps faut-il pour livrer un projet ?",
+      "Comment se déroule une collaboration concrètement ?",
+      "Proposez-vous de la maintenance après livraison ?",
+    ],
+    faq: [
+      {
+        question: "Quelles applications de gestion pouvez-vous développer ?",
+        answer:
+          "Gestion de stock, facturation, prise de réservations ou de rendez-vous, suivi de clients, tableaux de bord de suivi d'activité. Le périmètre exact est défini ensemble lors d'un premier échange.",
+      },
+      {
+        question: "Pourquoi une application sur mesure plutôt qu'un logiciel existant ?",
+        answer:
+          "Un logiciel existant impose sa logique et ses abonnements. Une application sur mesure s'adapte à vos process, vous appartient et peut évoluer avec votre activité. Selon votre besoin, je peux aussi vous dire honnêtement si un outil existant suffit.",
+      },
+    ],
+    sections: [
+      {
+        title: "Par où commencer pour digitaliser la gestion de votre activité ?",
+        paragraphs: [
+          "On liste d'abord les tâches qui vous font perdre le plus de temps, puis on construit une première version centrée sur celles-ci. Vous la testez en conditions réelles, et on ajuste avant d'ajouter d'autres fonctions.",
+        ],
+      },
+    ],
+    ctaLabel: "Demander un devis gratuit",
+    related: [
+      "creation-application-web-saas-sur-mesure",
+      "developpeur-flutter-application-mobile-freelance",
+      "creation-site-web-benin-cotonou",
+    ],
+    areaServed: ["Europe", "Afrique"],
+  },
+  {
+    slug: "maintenance-deploiement-application-docker",
+    seoTitle: "Maintenance et déploiement d'application web | Docker, CI",
+    seoDescription:
+      "Maintenance, corrections de bugs et mise en production de votre application web : déploiement avec Docker, intégration continue, suivi technique. Freelance en remote.",
+    eyebrow: "Maintenance & déploiement",
+    h1: "Maintenance et déploiement d'application web avec Docker",
+    lead: "Votre application est en ligne mais vous avez besoin de quelqu'un pour corriger les bugs, la mettre à jour ou la déployer proprement ? Je prends en charge la maintenance, les évolutions et la mise en production, avec Docker et de l'intégration continue pour des mises à jour plus sûres.",
+    lastModified: "2026-11-25",
+    highlights: [
+      {
+        title: "Corrections et mises à jour",
+        text: "Bugs, dépendances à jour, petites évolutions : votre application reste stable et sécurisée dans le temps.",
+      },
+      {
+        title: "Déploiement reproductible avec Docker",
+        text: "L'application tourne dans le même environnement partout, ce qui réduit les mauvaises surprises lors d'une mise en production.",
+      },
+      {
+        title: "Intégration continue",
+        text: "Des vérifications automatiques à chaque modification (lint, tests) pour repérer les erreurs avant qu'elles n'atteignent vos utilisateurs.",
+      },
+      {
+        title: "Un interlocuteur unique",
+        text: "Intervention ponctuelle ou suivi régulier, selon ce qui vous convient, sans engagement caché.",
+      },
+    ],
+    serviceTitles: [
+      "Maintenance & Évolution",
+      "Audit & Conseil Frontend",
+      "Développement Full-Stack",
+    ],
+    projectSlugs: ["mayylo", "ares-drive"],
+    faqQuestions: [
+      "Proposez-vous de la maintenance après livraison ?",
+      "Est-ce que vous travaillez sur des projets déjà existants ?",
+      "Combien coûte un projet ?",
+    ],
+    faq: [
+      {
+        question: "Que comprend la maintenance d'une application ?",
+        answer:
+          "Correction de bugs, mises à jour techniques et de sécurité, petites évolutions et accompagnement lors des mises en production. Les modalités (ponctuelle ou régulière) sont définies sur devis.",
+      },
+      {
+        question: "À quoi sert Docker pour mon application ?",
+        answer:
+          "Docker empaquette l'application avec tout ce dont elle a besoin pour fonctionner. Elle se déploie ainsi de la même manière sur n'importe quel serveur, ce qui simplifie les mises en production et limite les erreurs.",
+      },
+    ],
+    sections: [
+      {
+        title: "Pourquoi la maintenance ne doit pas être négligée",
+        paragraphs: [
+          "Une application non mise à jour accumule des failles de sécurité et des bugs. Un suivi régulier coûte généralement moins cher que de tout réparer en urgence après un incident.",
+        ],
+      },
+    ],
+    ctaLabel: "Demander un devis",
+    related: [
+      "refonte-optimisation-site-web-nextjs",
+      "developpeur-nestjs-api-backend-freelance",
+      "developpeur-fullstack-freelance-nestjs-postgresql",
+    ],
+    areaServed: ["Europe", "Afrique"],
   },
 ];
 

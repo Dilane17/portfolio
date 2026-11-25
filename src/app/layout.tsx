@@ -7,9 +7,9 @@ import ReadingProgress from "@/components/ReadingProgress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dylan-dev.me"),
-  title: "Développeur web freelance à Cotonou | Clovis Ahouandjinou",
+  title: "Développeur Full Stack Web & Mobile freelance | Clovis Ahouandjinou",
   description:
-    "Développeur web freelance à Cotonou : création de site web, landing page, application web SaaS et mobile Flutter pour startups et PME d'Afrique et d'Europe francophone.",
+    "Clovis Ahouandjinou, développeur full stack à Cotonou : sites web, applications SaaS (Next.js, NestJS, PostgreSQL) et applications mobiles Flutter pour startups et PME d'Afrique et d'Europe. Devis gratuit.",
   keywords: [
     "développeur web freelance Cotonou",
     "création de site web Bénin",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "https://www.dylan-dev.me",
-    title: "Développeur web freelance à Cotonou | Clovis Ahouandjinou",
+    title: "Développeur Full Stack Web & Mobile freelance | Clovis Ahouandjinou",
     description:
       "Clovis Ahouandjinou — Développeur front-end freelance React & Next.js. Interfaces performantes pour produits SaaS exigeants, de la landing page au dashboard complet.",
     siteName: "Clovis Ahouandjinou Portfolio",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Développeur web freelance à Cotonou | Clovis Ahouandjinou",
+    title: "Développeur Full Stack Web & Mobile freelance | Clovis Ahouandjinou",
     description:
       "Interfaces React & Next.js solides pour produits SaaS. Freelance basé à Cotonou, Bénin.",
     creator: "@dylankodee",

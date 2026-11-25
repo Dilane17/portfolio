@@ -9,21 +9,22 @@ export default function HeroSection() {
         <div className={styles.heroBadgeWrapper}>
           <div className={styles.availabilityBadge}>
             <span className={styles.availabilityDot}>Disponible en 2026</span>
-            Freelance front-end, expert React & Next.js
+            Développeur full stack web &amp; mobile freelance
           </div>
         </div>
 
         <h1 className={styles.heroTitle}>
-          <span className="sr-only">Clovis Ahouandjinou — Développeur Front-End Freelance React &amp; Next.js. </span>
+          <span className="sr-only">Clovis Ahouandjinou — Développeur full stack web et mobile freelance à Cotonou : applications Next.js, API NestJS, applications Flutter, sites web et SaaS pour l'Afrique et l'Europe. </span>
           Je conçois des interfaces{" "}
           <span className={styles.heroTitleAccent}>nettes</span>, rapides et
           faites pour durer.
         </h1>
 
         <p className={styles.heroSubtitle}>
-          Développeur front-end spécialisé produits SaaS et fintech. Je
-          transforme des maquettes en interfaces vivantes, précises, accessibles
-          et performantes, du composant isolé à la refonte complète.
+          Développeur full stack basé à Cotonou. Je crée des sites web,
+          applications SaaS et applications mobiles avec Next.js, NestJS,
+          PostgreSQL et Flutter, pour des startups et PME d'Afrique et
+          d'Europe francophone.
         </p>
 
         <div className={styles.heroButtons}>
