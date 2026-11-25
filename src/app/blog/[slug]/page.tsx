@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Navbar from "@/components/Navbar";
+import BlogInline from "@/components/BlogInline";
 import { blogPosts, getBlogPost } from "@/lib/blog";
 import { jsonLdString } from "@/lib/jsonLd";
 import styles from "../blog.module.css";
@@ -125,12 +126,18 @@ export default async function BlogPostPage({ params }: BlogPostProps) {
             case "h2":
               return <h2 key={i}>{block.text}</h2>;
             case "p":
-              return <p key={i}>{block.text}</p>;
+              return (
+                <p key={i}>
+                  <BlogInline text={block.text} />
+                </p>
+              );
             case "ul":
               return (
                 <ul key={i}>
                   {block.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item}>
+                      <BlogInline text={item} />
+                    </li>
                   ))}
                 </ul>
               );
