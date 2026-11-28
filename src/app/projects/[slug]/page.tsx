@@ -114,6 +114,29 @@ const repoInsights: Record<
     ],
     aside: []
   },
+  "delmas-ferrand": {
+    heroLead:
+      "Delmas & Ferrand est un site vitrine de démonstration pour un cabinet d'avocats fictif. Je l'ai construit avec WordPress pour montrer, sur un cas concret, ce que je livre sur une offre de création de site : charte, thème sur mesure, contenus, formulaire, SEO de base et mise en ligne.",
+    context: [
+      "Je propose la création de sites WordPress. Pour que les clients voient le résultat avant de commander, j'ai construit un site complet pour un secteur exigeant : les professions juridiques, où le moindre défaut de finition se remarque tout de suite.",
+      "Le cabinet, les avocats, l'adresse et les coordonnées sont fictifs. Les photographies viennent d'Unsplash et sont créditées dans les mentions légales du site.",
+    ],
+    before: [
+      "Des sites de cabinets souvent datés, denses et peu lisibles sur mobile.",
+      "Une identité à poser sans tomber dans les codes ternes du secteur.",
+      "Des contenus à structurer pour qu'un client non technique puisse les faire évoluer.",
+    ],
+    after: [
+      "Un thème enfant sur mesure, des pages en blocs WordPress et un bento grid pour la méthode et les domaines.",
+      "Une équipe présentée par spécialité, avec un lien direct vers le domaine concerné.",
+      "Des animations légères sans bibliothèque, désactivables selon les préférences du visiteur.",
+      "Un formulaire validé et une copie statique en ligne sur Vercel pour la démonstration.",
+    ],
+    aside: [
+      "Sur la version en ligne, le formulaire de contact est volontairement factice : il n'envoie aucun message.",
+      "Pour un vrai client, le site est livré sur son hébergement WordPress, où il modifie ses textes lui-même.",
+    ],
+  },
 };
 
 export const dynamicParams = false;
