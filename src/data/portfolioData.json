@@ -374,6 +374,105 @@
       "outcomes": [],
       "nextSteps": "",
       "publicNote": ""
+    },
+    {
+      "slug": "delmas-ferrand",
+      "seoTitle": "Site vitrine WordPress pour cabinet d'avocats | Delmas & Ferrand (démo)",
+      "seoDescription": "Étude de cas : site vitrine WordPress sur mesure pour un cabinet d'avocats fictif (thème bloc enfant, bento grid, animations légères, formulaire, mise en ligne). Par Clovis Ahouandjinou, développeur full stack freelance.",
+      "lastModified": "2026-11-28",
+      "title": "Delmas & Ferrand",
+      "eyebrow": "PROJET DE DÉMONSTRATION WORDPRESS",
+      "company": "Projet personnel",
+      "repoUrl": "",
+      "liveUrl": "https://delmas-ferrand-demo.vercel.app",
+      "screenshots": [
+        {
+          "src": "/case-studies/delmas-ferrand/hero.webp",
+          "alt": "Page d'accueil du site Delmas & Ferrand, cabinet d'avocats fictif, réalisé avec WordPress",
+          "caption": "Page d'accueil : un titre en trois verbes, une photo, des engagements chiffrés et un appel à l'action visible dès le premier écran."
+        },
+        {
+          "src": "/case-studies/delmas-ferrand/methode-bento.webp",
+          "alt": "Section Notre approche du site Delmas & Ferrand, présentée en bento grid",
+          "caption": "La méthode du cabinet présentée en bento grid : trois étapes et un engagement sur les honoraires."
+        },
+        {
+          "src": "/case-studies/delmas-ferrand/domaines-bento.webp",
+          "alt": "Page Domaines d'intervention du site Delmas & Ferrand, avec une grande tuile et cinq interventions",
+          "caption": "Une grande tuile par domaine, cinq interventions détaillées et une tuile pour poser une question."
+        },
+        {
+          "src": "/case-studies/delmas-ferrand/equipe.webp",
+          "alt": "Section équipe du site Delmas & Ferrand, trois avocats avec un lien vers leur spécialité",
+          "caption": "L'équipe présentée par spécialité, chaque carte renvoyant vers le domaine concerné."
+        }
+      ],
+      "tagline": "Un site vitrine de cabinet d'avocats construit sur WordPress, avec un thème sur mesure, pensé pour rassurer vite et donner envie de prendre rendez-vous.",
+      "summary": "Site de démonstration pour un cabinet d'avocats fictif, réalisé avec WordPress pour montrer ce que je livre sur une offre de création de site : charte graphique, thème sur mesure, contenus, formulaire, SEO de base et mise en ligne.",
+      "problem": "Un cabinet d'avocats vend de la confiance avant de vendre une prestation. Le site doit rassurer en quelques secondes, présenter trois domaines sans jargon et donner envie de prendre rendez-vous, avec la sobriété qu'impose la profession.",
+      "solution": "J'ai posé une identité (bleu, marine, Playfair Display et Raleway), construit un thème enfant sur mesure, rédigé les pages en blocs WordPress, ajouté un bento grid pour la méthode et les domaines, puis publié une copie statique pour la démonstration.",
+      "techStack": [
+        "WordPress",
+        "Thème bloc sur mesure",
+        "CSS et JavaScript",
+        "PHP",
+        "Vercel"
+      ],
+      "ctaLabel": "Voir le case study",
+      "role": "Développeur WordPress (solo)",
+      "timeline": "Projet de démonstration",
+      "team": "Solo",
+      "status": "En ligne : delmas-ferrand-demo.vercel.app",
+      "deliverables": [],
+      "deliverableDescriptions": [],
+      "proofPoints": [],
+      "recruiterTakeaways": [],
+      "impact": [
+        {
+          "label": "Contenu",
+          "value": "7 pages et 3 articles construits en blocs WordPress"
+        },
+        {
+          "label": "Accessibilité",
+          "value": "Contrastes vérifiés, animations désactivables par le visiteur"
+        },
+        {
+          "label": "Contrôle",
+          "value": "Audit automatisé et tests bureau et mobile avant mise en ligne"
+        },
+        {
+          "label": "Livraison",
+          "value": "Copie statique déployée sur Vercel"
+        }
+      ],
+      "goals": [],
+      "challenges": [],
+      "process": [
+        {
+          "title": "Poser la charte avant de construire",
+          "description": "J'ai défini la palette, les polices (Playfair Display pour la confiance, Raleway pour la lisibilité) et les contrastes avant la première page. Les polices sont hébergées sur le site, sans requête vers un service tiers."
+        },
+        {
+          "title": "Construire un thème enfant plutôt que bricoler un thème existant",
+          "description": "Un thème enfant porte les couleurs, les composants (cartes, bento grid, bandeau défilant) et les animations. Le contenu reste dans des blocs WordPress, séparé du code."
+        },
+        {
+          "title": "Animer sans alourdir",
+          "description": "L'apparition au défilement, les compteurs et l'en-tête flottant reposent sur du CSS et quelques lignes de JavaScript, sans bibliothèque. Ils respectent le réglage système de réduction des animations."
+        },
+        {
+          "title": "Contrôler avant de publier",
+          "description": "Un audit automatisé vérifie les pages, les mises à jour, les mentions légales et les accès. J'ai testé le rendu bureau et mobile, les liens et le formulaire avant l'export."
+        },
+        {
+          "title": "Publier une copie statique pour la démonstration",
+          "description": "Le site WordPress tourne en local, une copie statique est déployée sur Vercel. Le formulaire y est volontairement factice : il n'envoie rien et ne collecte aucune donnée."
+        }
+      ],
+      "technicalDecisions": [],
+      "outcomes": [],
+      "nextSteps": "",
+      "publicNote": ""
     }
   ],
   "skills": [
